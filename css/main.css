@@ -74,6 +74,10 @@ body {
     background-color: #4b4d4f;
 }
 
-.movie-list__table .free .free-fo {
+.movie-list__table .free-fo {
+    font-size: 22px;
+    font-weight: 400;
+    text-align: center;
+    color: #ffffff;
     background-color: #6c6c6c;
 }
