@@ -52,6 +52,7 @@ body {
     border-collapse: collapse;
     border-radius: 15px;
     overflow: hidden;
+    min-height: 75px;
 }
 .movie-list__table th {
     color: #fff;
@@ -81,3 +82,22 @@ body {
     color: #ffffff;
     background-color: #6c6c6c;
 }
+
+.movie-list__table .up, .down {
+    background-color: transparent;
+    border: none;
+}
+
+.movie-list__table .up:after {
+    content: '\25B2';
+    font-size: 23px;
+    color: #fff;
+}
+
+.movie-list__table .down:after {
+    content: '\25BC';
+    font-size: 23px;
+    color: #fff;
+}
+
+
