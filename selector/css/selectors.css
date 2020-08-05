@@ -1,0 +1,55 @@
+h2 {
+    text-decoration: underline;
+}
+.description {
+    color: blue;
+}
+.pp-description {
+    color: red;
+}
+#one { 
+    color: coral;
+}
+.one {
+    color: darkgoldenrod;
+    font-size: 50px;
+}
+.menu a {
+    font-size: 80px;
+}
+.menu2 a {
+    font-size: 30px;
+}
+h3 + .description {
+    color: crimson;
+}
+
+/* Просто содержит атрибут */
+a[data-name] {
+    font-size: 100px;
+}
+
+/* Атрибут равен чему-то */
+a[data-name="dd"] {
+    font-size: 10px;
+}
+
+/* Содержит слово */
+a[data-name~="cc"] {
+    color: darkmagenta;
+}
+
+/* Содержит сочетание*/
+a[data-name*="cc"] {
+    color: darkmagenta;
+}
+
+/* Начинается с */
+a[data-name^="cc"] {
+    color: darkmagenta;
+}
+
+/* Заканчивается на */
+a[data-name$="cc"] {
+    color: darkmagenta;
+}
