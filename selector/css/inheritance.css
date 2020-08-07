@@ -1,0 +1,51 @@
+body {
+    font-size: 9px;
+    border: 1px solid #ff00c8;
+}
+/*Специфичность - это способ, с помощью которого браузеры определяют, какие значения свойств CSS наиболее соответствуют элементу и, следовательно, будут применены. 
+Если для body применены свойства размер шрифта 9, то шрифт <p> стал
+маленьким, а в заголовке не поменялся.
+границу получил только тег body,
+Если для body пропишем границу то границу получил только тег body, а абзац и заголовок границу не получили.
+*/
+
+
+.parent1 {
+    font-size: 30px;
+    color: tomato;
+}
+
+.parent2 {
+    color: royalblue;
+    font-size: 60px;
+    border-bottom: 1 solid red;
+}
+
+p{
+    border: inherit;
+}
+
+#pagewrapper { 
+    font-size: 30px; 
+}
+
+.content { 
+    font-size: 15px; 
+} 
+
+.open {
+    text-align: left;
+}
+
+#child1 {
+    color: violet;
+}
+
+/* !important-используется для повышения приоритета свойства CSS */
+.child1 { 
+     color: slateblue !important;
+}
+
+/* unset-если свойство наследуется, то как у родителя, если нет — то по умолчанию
+inherit-как у родителя
+initial-по умолчанию */

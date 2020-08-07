@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Наследование классов</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/inheritance.css">
+</head>
+
+<body>
+    
+    <div class="parent1">
+        <div class="parent2">
+            <p>Наследование классов</p>
+        </div>
+    </div>
+    <!-- В данном примере <p> будет с размером шрифта 60, наследует свойство у class="parent2", а цвет наследует у родительского класса  -->
+    
+    <div>
+        <div>
+            <p class="parent1 parent2">Наследование классов</p>
+        </div>
+    </div>
+        <!-- В данном примере <p> будет c цветом класса parent2, class="parent2"перезаписывает цвет у class="parent1'  -->
+        
+    <div id="pagewrapper">
+            <div class="content">
+                <h3>This is the main paragraph.</h3>
+            </div>
+            <div class="secondary">
+                <p>This is the secondary paragraph.</p>
+            </div>
+    </div>
+
+    <div id="open">
+        <div class="cont">
+            <p style="text-align: center;">This is the main paragraph.</p> <!--  Inline стиль имеет самый высокий приоритет, игнорируя CSS правила, распространяющиеся на родителя и одноименные элементы/классы -->
+        </div>
+        <div class="second">
+            <p>This is the secondary paragraph.</p>
+        </div>
+    </div>
+
+        <!-- Идентификатор имеет больший приоритет -->
+    <div class="parent1" id="parent1">
+        <div class="parent2">
+            <p class="child1" id="child1">Наследование классов</p>
+        </div>
+    </div>
+    <!-- Рассчет специфичности для следующих примеров: 
+        {} -000
+        li {} -001
+        li:first-line {} -002
+        ul li {} -002
+        ul ol+li {} -003
+        h1+*[rel=up] {} -011
+        ul ol li.red {} -013
+        li.red.level {} -021
+        p {} -001
+        div p {} -002
+        .sith -010
+        div p.sith {} -012
+        #sith 100 (one id selector) -104
+        body #darkside .sith p {} -112
+
+    -->
+</body>
+
+</html>
