@@ -296,12 +296,14 @@ body {
     content: '\25B2';
     font-size: 1.43rem;
     color: #fff;
+    cursor: pointer;
 }
 
 .movie-list__table .movie-list__table_down:after {
     content: '\25BC';
     font-size: 1.43rem;
     color: #fff;
+    cursor: pointer;
 }
 
 .movie-list__table_up, .movie-list__table_down {
@@ -390,20 +392,25 @@ body {
 }
 
 .block5__table {
-    margin-top: 4.68rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 4.9rem;
 }
-
-.block5__poster {
+.block5__film {
+    flex: 0  0 33.3%;
     position: relative;
-    border-radius: 1.25rem;
-    width: 18.5rem;
-    height: 18.5rem;
+    overflow: hidden;
+    border-radius: 0.75rem;
     margin-bottom: 2.5rem;
 }
 
-.block5__poster_center {
-    margin: 0 2.5rem;
+
+.block5__poster {
+    border-radius: 1.25rem;
+    width: 18.5rem;
+    height: 18.5rem;
 }
+
 
 .block5__cosial {
     position: absolute;
@@ -417,8 +424,10 @@ body {
     display: none;
     overflow: hidden;
     overflow-y: auto;
+    width: 259px;
+    height: 258px;
 }
-.block5__poster:hover .block5__cosial{
+.block5__film:hover .block5__cosial{
     display: block;
     transform: 0.2s;
 } 
