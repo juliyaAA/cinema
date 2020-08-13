@@ -65,43 +65,43 @@ body {
 
 /* Сетка макета */
 .container {
-    max-width: 1030px;
+    max-width: 64.37rem;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 0.93rem;
 }
 
 /* Общие стили */
 .title {
-    font-size: 50px;
+    font-size: 3.12rem;
     font-weight: 700;
     color: #252525;
 }
 
 .paragraph {
-    font-size: 14px;
+    font-size: 0.87rem;
     font-weight: 300;
     text-align: center;
     color: #242424;
-    margin-top: 16px;
+    margin-top: 1rem;
 }
 
 .paragraph__right-color {
     text-align: right;
     color: #ffffff;
-    margin-top: 36px;
+    margin-top: 2.4rem;
 }
 .paragraph__left {
     text-align: left;
-    margin-top: 36px;
+    margin-top: 2.25rem;
     
 }
 
 /*Первый блок*/
 .block1 {
     position: relative;
-    min-height: 717px;
+    min-height: 44.81rem;
     background: url(../img/top_bg.jpg) center center/cover no-repeat;
-    padding-top: 54px;
+    padding-top: 3.375rem;
     overflow: hidden;
 }
 .block1:after {
@@ -125,16 +125,16 @@ body {
 }
 
 .block1__nav {
-    line-height: 45px;
+    line-height: 2.81rem;
 }
 
 .block1__nav li {
     display: inline-block;
-    padding: 0 17px;
+    padding: 0 1.1rem;
 }
 
 .block1__nav li a {
-    font-size: 15px;
+    font-size: 0.93rem;
     font-weight: 100;
     color: #ffffff;
     text-transform: uppercase;
@@ -148,20 +148,20 @@ body {
 }
 
 .block__h1 {
-    font-size: 80px;
+    font-size: 5rem;
     font-weight: 100;
     text-align: center;
     color: #ffffff;
-    margin-top: 149px;
+    margin-top: 9.31rem;
 }
 
 .block__h2 {
-    font-size: 50px;
+    font-size: 3.125rem;
     font-weight: 300;
     text-align: center;
     color: #ffffff;
-    letter-spacing: 1.1px;
-    margin-top: -2px;
+    letter-spacing: 0.0625rem;
+    margin-top: -0.2rem;
 }
 
 /* Второй блок */
@@ -175,20 +175,20 @@ body {
     width: 30%;
     box-shadow: 0px 1px 2px 0 rgba(35, 31, 32, 0.65);
     background-color: #ffffff;
-    top: -202px;
-    left: 762px;
-    padding: 30px;
-    min-height: 207px;
+    top: -12.62rem;
+    left: 47.2rem;
+    padding: 1.87rem;
+    min-height: 12.93rem;
 }
 
 .block2__descr {
-    font-size: 40px;
+    font-size: 2.5rem;
     font-weight: 700;
 }
 
 .block2__subdescr {
-    margin-top: 36px;
-    font-size: 14px;
+    margin-top: 2.25rem;
+    font-size: 0.87rem;
     font-weight: 100;
 }
 
@@ -196,44 +196,44 @@ body {
 .block2__location {
     display: flex;
     justify-content: space-between;
-    margin-top: 124px;
+    margin-top: 7.75rem;
 }
 .block2__plus {
     width: 33%;
-    padding: 0 15px;
+    padding: 0 0.93rem;
 }
 .block2__img:hover {
-    width: 175px;
+    width: 11rem;
 }
 .block2__img {
     display: block;
     margin: 0 auto;
-    height: 181px;
+    height: 11.31rem;
 }
 
 .block2__short-title {
-    font-size: 35px;
+    font-size: 2.18rem;
     font-weight: 900;
     text-align: center;
     color: #242424;
-    margin-top: 62px;
+    margin-top: 3.87rem;
 }
 
 .block2__tit {
-    margin-top: 71px;
+    margin-top: 4.43rem;
 }
 
 /* Третий блок */
 
 .movie-list__header {
     text-align: center;
-    margin: 119px 0 76px 22px;
+    margin: 7.7rem 0 5rem 1.37rem;
 }
 /* Таблица */
 .movie-list__table {
     width: 100%;
     border-collapse: collapse;
-    border-radius: 15px;
+    border-radius: 0.93rem;
     overflow: hidden;
     vertical-align: top;
 }
@@ -241,13 +241,13 @@ body {
 .movie-list__table th {
     color: #fff;
     background-color: #a3cc40;
-    font-size: 30px;
+    font-size: 1.87rem;
     font-weight: 900;
-    padding: 22px 0 15px 0px;
+    padding: 1.49rem 0 1.1rem 0px;
 }
 
 .movie-list__table_one {
-    font-size: 22px;
+    font-size: 1.375rem;
     font-weight: 400;
     text-align: center;
     color: #ffffff;
@@ -273,34 +273,34 @@ body {
 }
 
 .movie-list__table_one-time {
-   padding-bottom: 20px; 
-   padding-right: 39px;
+   padding-bottom: 1.25rem; 
+   padding-right: 2.43rem;
 }
 
 .movie-list__table_one-text {
     text-align: left;
-    padding-left: 41px;
-    padding-top: 7px;
+    padding-left: 2.56rem;
+    padding-top: 0.43rem;
 }
 
 .movie-list__table_one-plus {
     width: 13%;
-    padding-top: 16px;
+    padding-top: 1rem;
 }
 
 .movie-list__table_one-link {
-    padding-left: 39px;
+    padding-left: 2.43rem;
 }
 
 .movie-list__table .movie-list__table_up:after {
     content: '\25B2';
-    font-size: 23px;
+    font-size: 1.43rem;
     color: #fff;
 }
 
 .movie-list__table .movie-list__table_down:after {
     content: '\25BC';
-    font-size: 23px;
+    font-size: 1.43rem;
     color: #fff;
 }
 
@@ -315,7 +315,7 @@ body {
 }
 
 .block3__paragraph {
-    margin-top: 41px;
+    margin-top: 2.5rem;
 }
 
 /* Четвертый блок  */
@@ -323,8 +323,8 @@ body {
 .block4 {
     position: relative;
     background: url(../img/ticket.jpg) center center/cover no-repeat;
-    margin-top: 153px;
-    min-height: 697px;
+    margin-top: 9.56rem;
+    min-height: 43.56rem;
 }
 
 .block4:before {
@@ -346,29 +346,29 @@ body {
 }
 
 .block4__ticket {
-    width: 665px;
+    width: 41.56rem;
     float: right;
 }
 
 .block4__gift {
-    margin-top: 130px;
-    font-size: 50px;
+    margin-top: 8.2rem;
+    font-size: 3.125rem;
     font-weight: 900;
     color: #ffffff;
     text-align: right;
-    margin-bottom: 52px;
+    margin-bottom: 3.25rem;
 }
 
 .block4__button {
-    width: 220px;
-    height: 55px;
-    border-radius: 15px;
+    width: 13.75rem;
+    height: 3.43rem;
+    border-radius: 0.93rem;
     background-color: #90d23d;
-    font-size: 18px;
+    font-size: 1.125rem;
     text-align: center;
     color: #ffffff;
     border: none;
-    margin-top: 38px;
+    margin-top: 3rem;
     float: right;
 }
 
@@ -380,96 +380,99 @@ body {
 
 .block4__img {
     position: absolute;
-    width: 320px;
-    top: -35px;
+    width: 20rem;
+    top: -3.82rem;
 }
 
 /* Пятый блок */
 .block5 {
-   padding: 86px 0 100px 52px; 
+   padding: 5.375rem 0 6.25rem 3.25rem; 
 }
 
 .block5__table {
-    margin-top: 75px;
+    margin-top: 4.68rem;
 }
 
 .block5__poster {
     position: relative;
-    border-radius: 20px;
-    width: 296px;
-    height: 296px;
-    margin-bottom: 40px;
+    border-radius: 1.25rem;
+    width: 18.5rem;
+    height: 18.5rem;
+    margin-bottom: 2.5rem;
 }
 
 .block5__poster_center {
-    margin: 0 40px;
+    margin: 0 2.5rem;
 }
 
 .block5__cosial {
     position: absolute;
-    height: 100%;
-    width: 88%;
     left: 0;
     right: 0;
     top: 0;
-    border-radius: 15px;
+    bottom: 0;
+    border-radius: 0.93rem;
     background-color: rgba(144, 210, 61, 0.82);
-    padding: 19px;
-    color: #fff;
-    transition: 0.2s;
-    transform: translateY(100%);
+    padding: 1.18rem;
+    display: none;
+    overflow: hidden;
+    overflow-y: auto;
 }
-.block5__cosial:hover {
-    transform: translateY(0);
+.block5__poster:hover .block5__cosial{
+    display: block;
+    transform: 0.2s;
 } 
 
 .block5__cosial-name {
-    font-size: 33px;
+    font-size: 2.06rem;
     font-weight: 900;
     text-align: left;
     color: #fefefe;
 }
 
 .block5__cosial-band {
-    width: 83px;
-    height: 6px;
+    width: 5.18rem;
+    height: 0.375rem;
     background-color: #ffffff;
-    margin-top: 10px;
+    margin-top: 0.62rem;
 }
 
 .block5__cosial-pin {
-    margin-top: 110px;
+    margin-top: 6.87rem;
 }
 .block5__cosial-pin_icons {
-    width: 31px;
-    height: 31px;
-    margin-left: 2px;
+    width: 1.9375rem;
+    height: 1.9375rem;
+    margin-left: 0.125rem;
 }
 
 .block5__cosial-definition {
-    margin-top: 15px;
-    font-size: 18px;
+    margin-top: 0.93rem;
+    font-size: 1.125rem;
     font-weight: 500;
     color: #fefefe;
 }
-
+/* Шестой блок */
+.maps img {
+    width: 100vw;
+}
 /* Footer сайта */
 
 .footer {
-    min-height: 220px;
+    min-height: 13.75rem;
     background-color: #90d23d;
     text-align: center;
 }
 .footer__cosial{
-    padding-top: 60px;
+    padding-top: 3.75rem;
 }
 .footer__icons {
-    padding: 0 5px; 
+    padding: 0 0.31rem; 
 }
 
 .footer__subdescr {
-    margin-top: 23px;
-    font-size: 18px;
+    margin-top: 1.43rem;
+    font-size: 1.125rem;
     font-weight: 300;
     text-align: center;
     color: #ffffff;
