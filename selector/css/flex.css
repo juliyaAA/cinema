@@ -50,7 +50,6 @@
 
 /* flex-direction-управляет направлением главной оси,вдоль которой укладываются flex-элементы.*/
 
-
 .link {
     display: flex;
     margin-top: 70px;
