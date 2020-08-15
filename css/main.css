@@ -84,6 +84,7 @@ body {
 .paragraph__left {
     text-align: left;
     margin-top: 2.25rem;
+    margin-bottom: 4.9rem;
 }
 /*Первый блок*/
 .block1 {
@@ -342,16 +343,14 @@ body {
    padding: 5.375rem 0 6.25rem 3.25rem; 
 }
 .block5__table {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 4.9rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 2.87rem;
 }
 .block5__film {
-    flex: 0  0 33.3%;
     position: relative;
     overflow: hidden;
     border-radius: 0.75rem;
-    margin-bottom: 2.5rem;
 }
 .block5__poster {
     border-radius: 1.25rem;
@@ -388,8 +387,10 @@ body {
     margin-top: 0.62rem;
 }
 .block5__cosial-pin {
-    top: 242px;
+    top: 15.125rem;
     position: absolute;
+    font-size: 27px;
+    margin: 0 13px;
 }
 .block5__cosial-pin_icons {
     width: 32px;
@@ -400,8 +401,8 @@ body {
     border-radius: 50%;
 }
 .block5__cosial-pin_icons img {
-    height: 14px;
-    width: 26px;
+    height: 17px;
+    width: 31px;
 }
 .block5__cosial-definition {
     margin-top: 0.93rem;
