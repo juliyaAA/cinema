@@ -345,27 +345,31 @@ body {
 .block5__table {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-row-gap: 2.87rem;
+    grid-row-gap: 2rem;
+    grid-column-gap: 2rem;
+}
+.block5__table-film {
+    width: 18,5rem;
+    height: 18,5rem;
+}
+.block5__poster img {
+    display: block;
+    height: 100%;
+    width: 100%;
 }
 .block5__film {
     position: relative;
     overflow: hidden;
     border-radius: 0.75rem;
 }
-.block5__poster {
-    border-radius: 1.25rem;
-    width: 18.5rem;
-    height: 18.5rem;
-}
 .block5__cosial {
     position: absolute;
     top: 0%;
-    border-radius: 0.93rem;
     background-color: rgba(144, 210, 61, 0.82);
     padding: 1.18rem;
     overflow: hidden;
     color: #fff;
-    width: 76%;
+    width: 100%;
     height: 100%;
     transform: translateY(100%);
 }
