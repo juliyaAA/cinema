@@ -289,7 +289,6 @@ body {
     background: url(../img/ticket.jpg) center center/cover no-repeat;
     margin-top: 9.56rem;
     min-height: 43.56rem;
-    overflow: hidden;
 }
 .block4:before {
     content: "";
