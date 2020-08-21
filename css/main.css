@@ -352,8 +352,9 @@ body {
     grid-column-gap: 2rem;
 }
 .block5__table-film {
-    width: 18,5rem;
-    height: 18,5rem;
+    width: 18.5rem;
+    height: 18.5rem;
+    overflow: hidden;
 }
 .block5__poster img {
     display: block;
