@@ -418,6 +418,17 @@ body {
     font-weight: 500;
     color: #fefefe;
 }
+.owl-prev {
+    position: absolute;
+    left: -35px;
+    top: 45%;
+
+}
+.owl-next {
+    position: absolute;
+    right: -35px;
+    top: 45%;
+}
 /* Шестой блок */
 .maps img {
     width: 100vw;
@@ -445,6 +456,9 @@ body {
     margin: 7px;
     width: 30px;
     color: rgb(144, 210, 61);
+}
+.footer__icons:hover {
+    box-shadow: initial;
 }
 .footer__subdescr {
     margin-top: 1.73rem;
