@@ -3,10 +3,6 @@
     .block5 {
         padding: 4rem 0 6rem 0;
     }
-    /* .block5__table-film {
-        max-width: 100%; 
-        height: auto;
-    } */
 }
  @media screen and (max-width:800px) {
    .block__h1 {
@@ -69,8 +65,8 @@
     .block4__gift {
         font-size: 2.5rem;
     }
-    .block4__img {
-        width: 18rem;
+    .gift__img {
+        top: 25px;
     }
     .block5 {
         padding: 2rem 0;
@@ -177,8 +173,9 @@
     .block4__ticket {
         width: auto;
     }
-    .block4__img {
-        width: 15rem;
+    .gift__img {
+        left: 16px;
+        width: 17rem;
     }
     .block4__gift {
         font-size: 2.1rem;
@@ -213,8 +210,9 @@
     .paragraph__right-color {
         margin-top: 2rem;
     }
-    .block4__img {
-        width: 14rem;
+    .gift__img {
+        width: 11rem;
+        top: 37px;
     }
     .block4__gift {
         margin-bottom: 2rem;

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="js/plugins/owlcarousel/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="js/plugins/owlcarousel/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/media.css">
     <title>Кинотеатр</title>
 </head>
@@ -108,8 +110,8 @@
                     </thead>
                     <tbody>
                         <tr class="movie-list__table_one dark">
-                            <td class="movie-list__table_one-time">10am - 12pm</td>
-                            <td class="movie-list__table_one-text">Introduction and presentations about Envato</td>
+                            <td id="film_start_1" class="movie-list__table_one-time">10am - 12pm</td>
+                            <td id="film_name_1" class="movie-list__table_one-text">Introduction and presentations about Envato</td>
                             <td class="movie-list__table_one-plus"><img src="img/More icon.png" alt="plus"></td>
                         </tr>
                         <tr class="movie-list__table_one green">
@@ -138,11 +140,15 @@
                 harm could it do? :)</p>
         </div>
     </section>
-
+    <!-- подарок -->
+    <section class="gift">
+        <div class="container">
+            <img src="img/Эллипс 2.png" alt="подарок" class="gift__img">
+        </div>
+    </section>
     <!-- Четвертый блок -->
     <section class="block4">
         <div class="container">
-            <img src="img/Эллипс 2.png" alt="подарок" class="block4__img">
             <div class="block4__ticket">
                 <h3 class="block4__gift">Подарок каждому!</h3>
                 <p class="paragraph paragraph__right-color">Are you an Elite author in the Envato Marketplaces? If so we
@@ -478,6 +484,10 @@
         <button type="button">Заказать</button>
         <input type="button" value="заказать">
     </div>
+    
+    <script src="js/jquery.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/plugins/owlcarousel/js/owl.carousel.min.js"></script>
 
 </body>
 

@@ -283,8 +283,20 @@ body {
 .block3__paragraph {
     margin-top: 2.5rem;
 }
+/* подарок */
+.gift {
+    position: relative;
+}
+.gift__img {
+    position: absolute;
+    z-index: 2;
+    left: 39px;
+    top: 90px;
+    width: 300px;
+}
 /* Четвертый блок  */
 .block4 {
+    overflow: hidden;
     position: relative;
     background: url(../img/ticket.jpg) center center/cover no-repeat;
     margin-top: 9.56rem;
@@ -335,11 +347,7 @@ body {
     transition: .2s;
     cursor: pointer;
 }
-.block4__img {
-    position: absolute;
-    width: 20rem;
-    top: -3.82rem;
-}
+
 /* Пятый блок */
 .block5 {
    padding: 5.375rem 0 6.25rem 3.25rem; 
@@ -420,13 +428,13 @@ body {
 }
 .owl-prev {
     position: absolute;
-    left: -35px;
+    left: -55px;
     top: 45%;
 
 }
 .owl-next {
     position: absolute;
-    right: -35px;
+    right: -5px;
     top: 45%;
 }
 /* Шестой блок */
