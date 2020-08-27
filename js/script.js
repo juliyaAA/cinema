@@ -7,10 +7,12 @@ $(document).ready(function(){
         ],
         responsive:{
             0:{
-                items:1
+                items:1,
+                center: true
             },
             600:{
-                items:2
+                items:2,
+                center: true
             },
             1000:{
                 items:3
