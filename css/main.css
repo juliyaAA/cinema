@@ -90,7 +90,7 @@ body {
 /*Первый блок*/
 .block1 {
     position: relative;
-    min-height: 44.81rem;
+    min-height: 45rem;
     background: url(../img/top_bg.jpg) center center/cover no-repeat;
     padding-top: 3.375rem;
     overflow: hidden;
@@ -101,7 +101,7 @@ body {
     bottom: 0;
     left: 0;
     border-left: 100vw solid transparent;
-    border-bottom: 7.55rem solid #fff;
+    border-bottom: 8.3rem solid #fff;
 }
 .block1__header {
     display: inline-block;
@@ -152,14 +152,13 @@ body {
 /* Второй блок */
 .block2__card {
     position: absolute;
-    background-color: #fff;
-    width: 28.4rem;
-    box-shadow: 0px 1px 2px 0 rgba(35, 31, 32, 0.65);
+    right: 13px;
+    top: -206px;
+    width: 455px;
+    height: 206px;
+    padding: 1.9rem;
+    box-shadow: 0px 1px 2px 0px rgba(35, 31, 32, 0.65);
     background-color: #ffffff;
-    top: -12.62rem;
-    right: 0;
-    padding: 1.87rem;
-    min-height: 12.93rem;
 }
 .block2__descr {
     font-size: 2.5rem;
@@ -206,7 +205,7 @@ body {
 }
 .movie-list__header {
     text-align: center;
-    margin: 7.7rem 0 5rem 1.37rem;
+    margin: 7.7rem 0 4.8rem 1.37rem;
 }
 /* Таблица */
 .movie-list__table {
@@ -299,8 +298,8 @@ body {
     overflow: hidden;
     position: relative;
     background: url(../img/ticket.jpg) center center/cover no-repeat;
-    margin-top: 9.56rem;
-    min-height: 43.56rem;
+    margin-top: 8.8rem;
+    min-height: 44.95rem;
 }
 .block4:before {
     content: "";
@@ -308,7 +307,7 @@ body {
     top: 0;
     left: 0;
     border-right: 100vw solid transparent;
-    border-top: 7.55rem solid #fff;
+    border-top: 8.5rem solid #fff;
 }
 .block4:after {
     content: "";
@@ -316,14 +315,14 @@ body {
     bottom: 0;
     left: 0;
     border-left: 100vw solid transparent;
-    border-bottom: 7.55rem solid #fff;
+    border-bottom: 8.9rem solid #fff;
 }
 .block4__ticket {
     width: 41.56rem;
     float: right;
 }
 .block4__gift {
-    margin-top: 8.2rem;
+    margin-top: 8.9rem;
     font-size: 3.125rem;
     font-weight: 900;
     color: #ffffff;
@@ -350,7 +349,7 @@ body {
 
 /* Пятый блок */
 .block5 {
-   padding: 5.375rem 0 6.25rem 3.25rem; 
+   padding: 4.7rem 0 6.25rem 3.25rem; 
    overflow: hidden;
 }
 .block5__table {
