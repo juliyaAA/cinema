@@ -80,11 +80,11 @@ body {
 .paragraph__right-color {
     text-align: right;
     color: #ffffff;
-    margin-top: 2.4rem;
+    margin-top: 3.5rem;
 }
 .paragraph__left {
     text-align: left;
-    margin-top: 2.25rem;
+    margin-top: 2.5rem;
     margin-bottom: 4.9rem;
 }
 /*Первый блок*/
@@ -101,7 +101,7 @@ body {
     bottom: 0;
     left: 0;
     border-left: 100vw solid transparent;
-    border-bottom: 8.3rem solid #fff;
+    border-bottom: 8rem solid #fff;
 }
 .block1__header {
     display: inline-block;
@@ -153,9 +153,9 @@ body {
 .block2__card {
     position: absolute;
     right: 13px;
-    top: -206px;
+    top: -202px;
     width: 455px;
-    height: 206px;
+    min-height: 207px;
     padding: 1.9rem;
     box-shadow: 0px 1px 2px 0px rgba(35, 31, 32, 0.65);
     background-color: #ffffff;
@@ -172,11 +172,11 @@ body {
 .block2__location {
     display: flex;
     justify-content: space-between;
-    margin-top: 7.75rem;
+    margin-top: 8.2rem;
     overflow: hidden;
 }
 .block2__plus {
-    width: 33%;
+    width: 33.33%;
     padding: 0 0.93rem;
 }
 .block2__img:hover {
@@ -188,6 +188,21 @@ body {
     margin: 0 auto;
     height: 11.31rem;
 }
+.block2__img_left {
+    margin-top: -0.3rem;
+    margin-left: 2.7rem;
+}
+.block2__img_center {
+    margin-top: -0.55rem;
+    margin-left: 4.45rem;
+}
+.block2__img_right {
+    margin-top: 1.3rem;
+    margin-left: 5.1rem;
+}
+.block2__text {
+    margin-top: -1.7rem;
+}
 .block2__short-title {
     font-size: 2.18rem;
     font-weight: 900;
@@ -196,7 +211,7 @@ body {
     margin-top: 3.87rem;
 }
 .block2__tit {
-    margin-top: 4.43rem;
+    margin-top: 4.1rem;
 }
 
 /* Третий блок */
@@ -205,7 +220,7 @@ body {
 }
 .movie-list__header {
     text-align: center;
-    margin: 7.7rem 0 4.8rem 1.37rem;
+    margin: 7.7rem 0 4.9rem 1.7rem;
 }
 /* Таблица */
 .movie-list__table {
@@ -299,15 +314,15 @@ body {
     position: relative;
     background: url(../img/ticket.jpg) center center/cover no-repeat;
     margin-top: 8.8rem;
-    min-height: 44.95rem;
+    min-height: 44.6rem;
 }
 .block4:before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-    border-right: 100vw solid transparent;
-    border-top: 8.5rem solid #fff;
+    border-right: 104vw solid transparent;
+    border-top: 8.3rem solid #fff;
 }
 .block4:after {
     content: "";
@@ -315,7 +330,7 @@ body {
     bottom: 0;
     left: 0;
     border-left: 100vw solid transparent;
-    border-bottom: 8.9rem solid #fff;
+    border-bottom: 8rem solid #fff;
 }
 .block4__ticket {
     width: 41.56rem;
@@ -338,7 +353,7 @@ body {
     text-align: center;
     color: #ffffff;
     border: none;
-    margin-top: 3rem;
+    margin-top: 2.8rem;
     float: right;
 }
 .block4__button:hover {

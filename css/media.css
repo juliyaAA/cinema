@@ -1,7 +1,15 @@
 @media screen and (max-width: 1000px) {
-  
+    .block2__plus img {
+        display: block;
+        margin: 0 auto;
+    }
     .block5 {
         padding: 4rem 0 6rem 0;
+    }
+}
+@media screen and (max-width:905px) {
+    .movie-list__table {
+        width: 905px;
     }
 }
  @media screen and (max-width:800px) {
@@ -10,9 +18,6 @@
     }
    .movie-list {
         overflow-x: auto;
-    }
-    .movie-list__table {
-        width: 800px;
     }
     .block1__nav li {
         padding: 0 0.7rem;
@@ -83,7 +88,7 @@
 }
 @media screen and (max-width:600px) {
     .block1 {
-        min-height: 38rem;
+        min-height: 35rem;
     }
     .block__col1 {
         float: right;
@@ -128,13 +133,13 @@
         top: 0;
         bottom: 0;
         left: 0;
-        padding: 2rem;
-        background-color: rgb(0, 0, 0, .9);
+        padding: 1rem 2rem;
+        background-color: rgb(0, 0, 0, .8);
         z-index: 100;
         text-align: left;
         transform: translateX(0%);
         transition: 0.2s;
-        height: 87vh;
+        height: 48vh;
     }
     .block1__nav li {
         display: block;
@@ -143,9 +148,10 @@
         margin-left: 0;
         margin-top: 0.75rem;
     }
-   /* .block1__nav_close {
-       transform: translateX(100%);
-   } */
+    .block1__nav_close li {
+        margin-bottom: 1.6rem;
+        text-align: center;
+    }
    .block2__tit {
         text-align: center;
     }
@@ -153,7 +159,7 @@
         display: none;
     }
     .block2__tit {
-        margin-top: 4rem;
+        margin-top: 1rem;
         text-align: center;
     }
     .block2__location {
@@ -211,8 +217,11 @@
     .block__col1 {
         display: none;
     }
+    .movie-list__header {
+        margin: 2.7rem 0 3.9rem -1rem;
+    }
     .block4 {
-    min-height: 47rem;
+    min-height: 44rem;
     }
     .block4__gift {
         margin-top: 8rem;
@@ -242,7 +251,10 @@
         height: 11rem;
     }
     .footer {
-        min-height: 10rem;
+        min-height: 8rem;
+    }
+    .footer__cosial {
+        padding-top: 1rem;
     }
     .footer__icons {
         width: 41px;
@@ -258,6 +270,15 @@
     }
 }
 @media screen and (max-width:320px) {
+    .block1 {
+        min-height: 113vh;
+    }
+    .block__h1 {
+        margin-top: 8.5rem;
+    }
+    .block1__nav {
+        height: 33vh;
+    }
     .block__h2 {
         font-size: 1.5rem;
     }
