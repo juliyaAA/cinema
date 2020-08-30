@@ -8,16 +8,19 @@
     }
 }
 @media screen and (max-width:905px) {
+    .block2__card {
+        width: 391px;
+    }
     .movie-list__table {
         width: 905px;
+    }
+    .movie-list {
+        overflow-x: auto;
     }
 }
  @media screen and (max-width:800px) {
    .block__h1 {
         font-size: 4rem;
-    }
-   .movie-list {
-        overflow-x: auto;
     }
     .block1__nav li {
         padding: 0 0.7rem;
@@ -29,9 +32,10 @@
     font-size: 2.8rem;
     }
     .block2__card {
-        width: 27rem;
+        width: 26rem;
         padding: 1rem;
         min-height: 11rem;
+        top: -245px;
     }
     .block5__table {
        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
@@ -45,6 +49,14 @@
     }
     .block5__cosial-pin {
         top: 13.5rem;
+    }
+}
+@media screen and (max-width:780px) {
+    .gift__img {
+        top: 31px;
+    }
+    .block2__plus img {
+        width: 165px;
     }
 }
 @media screen and (max-width:700px) {
@@ -66,6 +78,7 @@
     .block2__card {
         width: 20rem;
         min-height: auto;
+        top: -260px;
     }
     .block2__descr {
         font-size: 2rem;
@@ -87,14 +100,20 @@
     }
 
 }
-@media screen and (max-width:780px) {
+@media screen and (max-width: 680px) {
     .gift__img {
-        top: 31px;
+        top: 0px;
+        width: 270px;
     }
 }
+ 
 @media screen and (max-width:600px) {
     .block1 {
-        min-height: 35rem;
+        min-height: 41.1rem;
+    }
+    .block1:after {
+        content: "";
+        border-bottom: 5.5rem solid #fff;
     }
     .block__col1 {
         float: right;
@@ -178,16 +197,26 @@
         margin-top: 28px;
         width: auto;
     }
-    .block2__img {
-        display: block;
-        margin: 0 auto;
-        height: 13rem;
+    .block2__plus img {
+        width: 240px;
     }
     .block2__text {
         margin-top: 2rem;
     }
     .paragraph {
         font-size: 1rem;
+    }
+    .block4 {
+        margin-top: 4.56rem;
+        min-height: 45.5rem;
+    }
+    .block4:before {
+        content: "";
+        border-top: 6.6rem solid #fff;
+    }
+    .block4:after {
+        content: "";
+        border-bottom: 5.6rem solid #fff;
     }
     .block4__ticket {
         width: auto;
@@ -203,6 +232,7 @@
         width: 11rem;
         height: 3rem;
         font-size: 1rem;
+        margin-top: 1.5rem;
     }
     .block5__table {
         grid-template-columns: 1fr 1fr;

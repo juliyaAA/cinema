@@ -172,7 +172,7 @@ body {
 .block2__location {
     display: flex;
     justify-content: space-between;
-    margin-top: 8.2rem;
+    margin-top: 8rem;
     overflow: hidden;
 }
 .block2__plus {
@@ -183,21 +183,17 @@ body {
     transform: scale(1.07);
     transition: 0.3s;
 }
-.block2__img {
+.block2__plus img {
     display: block;
-    margin: 0 auto;
-    height: 11.31rem;
+    height: 205px;
 }
 .block2__img_left {
-    margin-top: -0.3rem;
     margin-left: 2.7rem;
 }
 .block2__img_center {
-    margin-top: -0.55rem;
-    margin-left: 4.45rem;
+    margin-left: 4.5rem;
 }
 .block2__img_right {
-    margin-top: 1.3rem;
     margin-left: 5.1rem;
 }
 .block2__text {
@@ -220,7 +216,7 @@ body {
 }
 .movie-list__header {
     text-align: center;
-    margin: 7.7rem 0 4.9rem 1.7rem;
+    margin: 7.8rem 0 4.9rem 1.8rem;
 }
 /* Таблица */
 .movie-list__table {
@@ -259,7 +255,7 @@ body {
     background-color: #6c6c6c;
 }
 .movie-list__table_one-time {
-   padding-bottom: 1.25rem; 
+   padding-bottom: 1.35rem; 
    padding-right: 2.43rem;
 }
 .movie-list__table_one-text {
@@ -322,7 +318,7 @@ body {
     top: 0;
     left: 0;
     border-right: 100vw solid transparent;
-    border-top: 8.6rem solid #fff;
+    border-top: 8.8rem solid #fff;
 }
 .block4:after {
     content: "";
@@ -330,14 +326,14 @@ body {
     bottom: 0;
     left: 0;
     border-left: 100vw solid transparent;
-    border-bottom: 8.6rem solid #fff;
+    border-bottom: 8.4rem solid #fff;
 }
 .block4__ticket {
     width: 41.56rem;
     float: right;
 }
 .block4__gift {
-    margin-top: 8.9rem;
+    margin-top: 9.3rem;
     font-size: 3.125rem;
     font-weight: 900;
     color: #ffffff;
@@ -353,7 +349,7 @@ body {
     text-align: center;
     color: #ffffff;
     border: none;
-    margin-top: 2.8rem;
+    margin-top: 2.7rem;
     float: right;
 }
 .block4__button:hover {
