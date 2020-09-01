@@ -84,7 +84,7 @@ body {
 }
 .paragraph__left {
     text-align: left;
-    margin-top: 2.5rem;
+    margin-top: 2.2rem;
     margin-bottom: 4.9rem;
 }
 /*Первый блок*/
@@ -101,7 +101,7 @@ body {
     bottom: 0;
     left: 0;
     border-left: 100vw solid transparent;
-    border-bottom: 8.5rem solid #fff;
+    border-bottom: 8.4rem solid #fff;
 }
 .block1__header {
     display: inline-block;
@@ -153,7 +153,7 @@ body {
 .block2__card {
     position: absolute;
     right: 13px;
-    top: -202px;
+    top: -201px;
     width: 455px;
     min-height: 207px;
     padding: 1.9rem;
@@ -176,7 +176,8 @@ body {
     overflow: hidden;
 }
 .block2__plus {
-    width: 33.33%;
+    flex: 1 0 0;
+    flex-wrap: wrap;
     padding: 0 0.93rem;
 }
 .block2__img:hover {
@@ -194,10 +195,10 @@ body {
     margin-left: 4.5rem;
 }
 .block2__img_right {
-    margin-left: 5.1rem;
+    margin-left: 4rem;
 }
 .block2__text {
-    margin-top: -1.7rem;
+    margin-top: -1.5rem;
 }
 .block2__short-title {
     font-size: 2.18rem;
@@ -333,7 +334,7 @@ body {
     float: right;
 }
 .block4__gift {
-    margin-top: 9.3rem;
+    margin-top: 9rem;
     font-size: 3.125rem;
     font-weight: 900;
     color: #ffffff;
