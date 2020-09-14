@@ -163,11 +163,9 @@ const film = {
         let filmName = this.name,
             filmStart = this.start,
             filmGanars = film.getGanre.apply(this),
-            filmHTML = `<tr class="movie-list__table_one dark">
-                            <td id="film_start_1" class="movie-list__table_one-time">${filmStart}</td>
-                            <td id="film_name_1" class="movie-list__table_one-text">${filmName}</td>
-                            <td class="movie-list__table_one-plus">${filmGanars}</td>
-                        </tr>`;
+            filmHTML = `<td id="film_start_1" class="movie-list__table_one-time">${filmStart}</td>
+                        <td id="film_name_1" class="movie-list__table_one-text">${filmName}</td>
+                            <td class="movie-list__table_one-plus">${filmGanars}</td>`;
         return filmHTML;
     },
 
@@ -253,7 +251,7 @@ for (let i = 0; i < filmsNew.length; i++) {
     let currentFilm = filmsNew[i],
         filmBlockHTML = film.renderFilmBlock.bind(currentFilm)(),
         div = document.createElement("div"); //содаем DOM элемент DIV - контейнер одного фильма в мозайке
-    div.classList.add("block5__table");
+    div.classList.add();
     div.innerHTML = filmBlockHTML; //записываем в DOM элемент HTML разметку
     mosaicDOM.appendChild(div); //добавляем в DOM элемент таблицы DOM элемент строки с фильмом
 }
@@ -268,7 +266,7 @@ let mosaicDOM = document.getElementById("filmsNew"), // это flex контей
 for (let i = 0; i < filmsNew.length; i++) {
     let currentFilm = filmsNew[i],
         filmBlockHTML = film.renderFilmBlock.bind(currentFilm)();
-    fullHTML += '<div class="">'+filmBlockHTML+'</div>';
+    fullHTML += filmBlockHTML;
 }
 mosaicDOM.innerHTML = fullHTML;
 */
