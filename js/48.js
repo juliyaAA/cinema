@@ -245,22 +245,8 @@ for (let i = 0; i < filmsHire.length; i++) {
     tableDOM.appendChild(tr); //добавляем в DOM элемент таблицы DOM элемент строки с фильмом
 }
 
-//добавить фильмы в мозайку (CA)
-let mosaicDOM = document.getElementById("filmsNew"); // это flex контейнер, куда добавляются блоки
-for (let i = 0; i < filmsNew.length; i++) {
-    let currentFilm = filmsNew[i],
-        filmBlockHTML = film.renderFilmBlock.bind(currentFilm)(),
-        div = document.createElement("div"); //содаем DOM элемент DIV - контейнер одного фильма в мозайке
-    div.classList.add();
-    div.innerHTML = filmBlockHTML; //записываем в DOM элемент HTML разметку
-    mosaicDOM.appendChild(div); //добавляем в DOM элемент таблицы DOM элемент строки с фильмом
-}
-
 //то же, но с использованием только innerHTML
-//в этом случае мы не создаем контейнеры программно. А просто записываем HTML разметку
-//в свойство flex контейнера. Предварительно собирая ее в цикле
 
-/**
 let mosaicDOM = document.getElementById("filmsNew"), // это flex контейнер, куда добавляются блоки
     fullHTML = ''; //это полная строка HTML разметки со всеми фильмами, формируем в цикле
 for (let i = 0; i < filmsNew.length; i++) {
@@ -269,4 +255,3 @@ for (let i = 0; i < filmsNew.length; i++) {
     fullHTML += filmBlockHTML;
 }
 mosaicDOM.innerHTML = fullHTML;
-*/
