@@ -10,7 +10,10 @@ const mock = [
         image: "img/mov1.jpg", 
         fb: "https://fb.com",
         twitter: "https://twitter.com",
-        behance: "https://www.behance.net"
+        behance: "https://www.behance.net",
+        price: 200,
+        room: 0,
+        tickets: [5, 6]
     },
     {
         name: "Собачья жизнь 2",
@@ -23,7 +26,10 @@ const mock = [
         image: "img/mov2.jpg", 
         fb: "https://fb.com",
         twitter: "https://twitter.com",
-        behance: "https://www.behance.net"
+        behance: "https://www.behance.net",
+        price: 300,
+        room: 1,
+        tickets: [10, 8]
     },
     {
         name: "История игрушек 4",
@@ -36,7 +42,10 @@ const mock = [
         image: "img/mov4.jpg", 
         fb: "https://fb.com",
         twitter: "https://twitter.com",
-        behance: "https://www.behance.net"
+        behance: "https://www.behance.net",
+        price: 500,
+        room: 2,
+        tickets: [1, 9, 4]
     },
     {
         name: "Люди в чёрном: Интернэшнл",
@@ -49,7 +58,10 @@ const mock = [
         image: "img/mov3.jpg", 
         fb: "https://fb.com",
         twitter: "https://twitter.com",
-        behance: "https://www.behance.net"
+        behance: "https://www.behance.net",
+        price: 700,
+        room: 1,
+        tickets: [3, 8, 9, 5]
     }
 ];
 
@@ -85,22 +97,28 @@ const genres = [
     }
 ];
 
-//так делали на лекции. Более простой вариант
-/*
-const ganars = [
-    'Фантастика', // 0
-    'Боевик',     // 1
-    'Фэнтези',    // 2
-    'Драма',      // 3
-    'Комедия',    // 4
-    'Мультфильм'  // 5
-  ]
-*/
+const rooms = [
+    {
+        id: 0,
+        name: 'X',
+        count: 10
+    },
+    {
+        id: 1,
+        name: 'L',
+        count: 15
+    },
+    {
+        id: 2,
+        name: 'XL',
+        count: 20
+    }
+];
 
 //массивы для хранения отсортированных данных
 let filmsNew = [],
     filmsHire = [];
-
+//сортируем на новинки и в прокате
 for (let i = 0; i < mock.length; i++) {
     let currentFilm = mock[i];
 
@@ -157,15 +175,39 @@ const film = {
         return strGanars;
     },
 
+    getRoom: function() {
+        const room = this.room;
+        const name = rooms.find(
+            function(el) {
+                return el.id == room;
+            }
+        ).name;
+        const count = rooms.find(
+            function(el) {
+                return el.id == room;
+            }
+        ).count;
+        return {
+            name,
+            count
+        };
+    },
+
+    getPrice: function () {
+        return this.price;
+    },
+
     //шаг 7. Метод рендеринга одной строки таблицы
     renderFilmRow() {
         //console.warn(this); //this содержит проброшенный объект
         let filmName = this.name,
             filmStart = this.start,
             filmGanars = film.getGanre.apply(this),
-            filmHTML = `<td id="film_start_1" class="movie-list__table_one-time">${filmStart}</td>
-                        <td id="film_name_1" class="movie-list__table_one-text">${filmName}</td>
-                            <td class="movie-list__table_one-plus">${filmGanars}</td>`;
+            filmPrice = this.price,
+            filmHTML = `<td class="movie-list__table_one-time">${filmStart}</td>
+                        <td class="movie-list__table_one-text">${filmName}</td>
+                        <td class="movie-list__table_one-plus">${filmGanars}</td>
+                        <td>${filmPrice}</td>`;
         return filmHTML;
     },
 
@@ -181,7 +223,7 @@ const film = {
                             <div class="block5__film">
                             <div class="block5__poster"><img src="${filmImage}"></div>
                             <div class="block5__cosial">
-                                <h3 class="block5__cosial-name">${filmName}}</h3>
+                                <h3 class="block5__cosial-name">${filmName}</h3>
                                 <div class="block5__cosial-band"></div>
                                 <p class="block5__cosial-definition">${filmDescription}</p>
                                 <div class="block5__cosial-pin">
@@ -198,8 +240,46 @@ const film = {
                             </div>
                         </div>`;
         return filmHTML;
+    },
+
+    renderFilmPlaces(count) {
+        let cinemaTickets = document.getElementById('cinema-tickets');
+        let countTicket = document.getElementById('orderFilmCountTicket');
+        let orderFilmTotalPrice = document.getElementById('orderFilmTotalPrice');
+        cinemaTickets.innerHTML = '';
+        
+        for(let i = 1; i < count + 1; i++) {
+            let element = document.createElement('div');
+            element.classList.add('square');
+            element.oncontextmenu = function() {
+                console.log(filmsHire, i);
+                alert(filmsHire[indexFilm].price);
+            };
+            // Проверка на уже забронированный билет
+            this.tickets.forEach(item => {
+                if(item === i) {
+                    element.classList.add('bought');
+                }
+            });
+            element.innerHTML = i;
+            cinemaTickets.append(element),
+            element.onclick = event => {
+                if(event.target.classList.contains('bought')) {
+                    alert('место забронировано');
+                } else if (!event.target.classList.contains('reserve')) {
+                    event.target.classList.add('clic', 'bought');
+                    countTicket.innerHTML = parseInt(countTicket.innerHTML) + 1;
+                    orderFilmTotalPrice.innerHTML = this.price * parseInt(countTicket.innerHTML);
+                } else {
+                    event.target.classList.remove('reserve');
+                    countTicket.innerHTML = parseInt(countTicket.innerHTML) - 1;
+                    orderFilmTotalPrice.innerHTML = this.price * parseInt(countTicket.innerHTML);
+                }
+            };
+        }
     }
 };
+ 
 
 //тестирование объекта-обертки (шаг 4), расомментируйте для проверки
 //для проброса контекста используем apply
@@ -234,24 +314,89 @@ for (let i = 0; i < filmsHire.length; i++) {
 
 //добавить фильмы в таблицу (шаг 9)
 //в теге table таблицы с фильмами не забудьте прописать id="filmsHire" и удалить все строки, кроме заголовка
-
 //получаем DOM элемент с таблицей
+
+// Билеты на фильмы
+let ticked = [];
+let indexFilm = null;
+
 let tableDOM = document.getElementById("filmsHire");
 for (let i = 0; i < filmsHire.length; i++) {
     let currentFilm = filmsHire[i],
+        filmName = film.getName.bind(currentFilm)(),
+        filmRoom = film.getRoom.bind(currentFilm)(),
+        filmStart = film.getStart.bind(currentFilm)(),
+        filmGanars = film.getGanre.bind(currentFilm)(),
+        filmPrice = film.getPrice.bind(currentFilm)(),
         filmRowHTML = film.renderFilmRow.bind(currentFilm)(),
         tr = document.createElement("tr"); //содаем DOM элемент TR;
+        tr.classList.add('movie-list__table_one');
+    if (i % 2 == 0)
+        tr.classList.add('dark');
+    else
+        tr.classList.add('light');
     tr.innerHTML = filmRowHTML; //записываем в DOM элемент HTML разметку
+    
+    //вешаем обработчик события на строку, вызывающий модальное окно
+    /*** РАЗОБРАТЬ */
+    tr.onclick = function () {
+        indexFilm = i;
+        // 1. Находим элемент с формой заказ 
+        // 2. Изменить состояние из display: none -> display: block;
+        // 3. Отобразить данные по бронированию фильма
+
+        orderForm.style.display = 'block';
+        film.renderFilmPlaces.bind(currentFilm)(filmRoom.count);
+        
+        let orderFilmName = document.getElementById('orderFilmName');
+        let orderFilmStart = document.getElementById('orderFilmStart');
+        let orderFilmGanar = document.getElementById('orderFilmGanar');
+        let orderFilmPrice = document.getElementById('orderFilmPrice');
+        let orderFilmRoom = document.getElementById('orderFilmRoom');
+        let orderFilmCountTicket = document.getElementById('orderFilmCountTicket');
+        let orderFilmTotalPrice = document.getElementById('orderFilmTotalPrice');
+           
+        orderFilmCountTicket.innerHTML = 0;
+
+        orderFilmName.innerHTML = filmName;
+        orderFilmStart.innerHTML = filmStart;
+        orderFilmGanar.innerHTML = filmGanars;
+        orderFilmPrice.innerHTML = filmPrice;
+        orderFilmRoom.innerHTML = filmRoom.name;
+        
+        orderFilmTotalPrice.innerHTML = filmPrice * parseInt(orderFilmCountTicket.innerHTML);
+    };
     tableDOM.appendChild(tr); //добавляем в DOM элемент таблицы DOM элемент строки с фильмом
 }
 
-//то же, но с использованием только innerHTML
+// Закрытие модального окна
+/*** РАЗОБРАТЬ Event Handler */
+let orderForm = document.getElementById('booking-form');
+let closeOrderForm = document.getElementById('booking-close');
 
-let mosaicDOM = document.getElementById("filmsNew"), // это flex контейнер, куда добавляются блоки
-    fullHTML = ''; //это полная строка HTML разметки со всеми фильмами, формируем в цикле
+closeOrderForm.onclick = function () {
+  orderForm.style.display = 'none';
+};
+
+// Валидация ввода имени
+/** РАЗОБРАТЬ Event Handler */
+let sendOrder = document.getElementById('sendOrder');
+sendOrder.onclick = function () {
+  let orderClinetName = document.getElementById('orderClinetName');
+
+  if (orderClinetName.value) {
+    orderClinetName.style.border = '1px solid #bebebe';
+  } else {
+    orderClinetName.style.border = '2px solid red';
+  }
+};
+
+let mosaicDOM = document.getElementById("filmsNew"); // это flex контейнер, куда добавляются блоки
 for (let i = 0; i < filmsNew.length; i++) {
     let currentFilm = filmsNew[i],
-        filmBlockHTML = film.renderFilmBlock.bind(currentFilm)();
-    fullHTML += filmBlockHTML;
+        filmBlockHTML = film.renderFilmBlock.bind(currentFilm)(),
+        div = document.createElement("div"); //содаем DOM элемент DIV - контейнер одного фильма в мозайке
+    div.classList.add();
+    div.innerHTML = filmBlockHTML; //записываем в DOM элемент HTML разметку
+    mosaicDOM.appendChild(div); //добавляем в DOM элемент таблицы DOM элемент строки с фильмом
 }
-mosaicDOM.innerHTML = fullHTML;

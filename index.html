@@ -100,11 +100,12 @@
                                 <a href="#">Время</a>
                                 <button class="movie-list__table_up"></button>
                             </th>
-                            <th class="movie-list__table_one-width2">
+                            <th class="movie-list__table_one-width">
                                 <a href="#" class="movie-list__table_one-link">Фильм</a>
                                 <button class="movie-list__table_down"></button>
                             </th>
                             <th class="movie-list__table_one-width">Жанр</th>
+                            <th class="movie-list__table_one-width">Цена</th>
                         </tr>
                     </thead>
                 </table>
@@ -157,7 +158,7 @@
                 laudantium neque nihil omnis perferendis sed sequi tempore! Ad ea esse ex inventore repudiandae,
                 suscipit!
             </p>
-            <div class="block5__table" id="filmsNew"></div>
+            <div class="block5__table owl-carousel" id="filmsNew"></div>
         </div>
     </section>
 
@@ -197,9 +198,9 @@
         <form class="order-form">
             <div id="popup-close" class="close"><img class="popup-close_img" src="img/close.svg" alt="close" ></div>
             <div class="modal__form">
-                <div class="input-wrap error">
+                <div class="input-wrap">
                     <input type="text" name="as" id="name" required placeholder="Имя" class="input-text">
-                    <div class="popup-error-message">Ошибка</div>
+                    <div class="popup-error-message"></div>
                 </div>
                 <div class="input-wrap">
                     <select id="select" type="text" required class="input-text">
@@ -216,7 +217,8 @@
                     </select>
                 </div>
                 <div class="input-wrap">
-                    <label><input type="checkbox" name="showdelholds" id="agree">Я согласен на обработку персональных данных</label>
+                    <label><input type="checkbox" name="agree" id="agree">Я согласен на обработку персональных данных</label>
+                    <div class="popup-error-message"></div>
                 </div>
                 <div class="input-wrap">
                     <input type="submit" value="заказать" class="button1" id="submit">
@@ -224,11 +226,59 @@
             </div>
         </form>
     </div>
+    <div id="booking-form" class="booking hidden">
+        <form action="order.php" class="booking-form">
+            <div id="booking-close" class="close"><img class="popup-close_img" src="img/close.svg" alt="close" ></div>
+            <div class="modal-form">
+                <div>
+                    Название фильма: <span id="orderFilmName"></span>
+                </div>
+                <div>
+                    Жанр: <span id="orderFilmGanar"></span>
+                </div>
+                <div>
+                    Начало: <span id="orderFilmStart"></span>
+                </div>
+                <div>
+                    Зал: <span id="orderFilmRoom"></span>
+                </div>
+                <div>
+                    Стоимость 1 билета: <span id="orderFilmPrice"></span>
+                </div>
+                <div>
+                    Кол-во выбранных: <span id="orderFilmCountTicket">0</span>
+                </div>
+                <div>
+                    Общая стоимость: <span id="orderFilmTotalPrice"></span>
+                </div>
+            </div>
+            <div class="modal-input">
+                <div>
+                    <label for="price"></label>
+                    <input type="number" id="sendOrder" name="tentacles">
+                </div>
+                <div>
+                    <label for="phone"></label>
+                    <input type="tel" id="phone" name="phone" pattern="[+7(999)-999-99-99]" placeholder="+7(999)-999-99-99"> 
+                </div>
+                <div>
+                    <input type="text" name="name" placeholder="Введите имя">
+                </div>
+            </div> 
+            <div id="cinema-tickets" class="cinema-tickets">
+                <div class="square"></div>
+            </div>
+            <div>
+                <input type="submit" name="name-submit" value="заказать" class="button2">
+            </div>
+        </form>
+    </div>
+
     <script src="js/jquery.js"></script>
+    <script src="js/plugins/owlcarousel/js/owl.carousel.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel" src="js/script.js"></script>
-    <script type="text/babel" src="js/48.js"></script>
-    <script src="js/plugins/owlcarousel/js/owl.carousel.min.js"></script>
+    <script type="text/babel" src="js/48.js"></script>   
 </body>
 
 </html>

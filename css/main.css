@@ -233,18 +233,13 @@ body {
     font-size: 1.87rem;
     font-weight: 900;
     padding: 1.3rem 0 1.1rem 5px;
+    width: 25%;
 }
 .movie-list__table_one {
     font-size: 1.375rem;
     font-weight: 400;
     text-align: center;
     color: #ffffff;
-}
-.movie-list__table_one-width {
-    width: 25%;
-}
-.movie-list__table_one-width2 {
-    text-align: left;
 }
 .dark {
     background-color: #373737;
@@ -255,18 +250,16 @@ body {
 .green {
     background-color: #6c6c6c;
 }
-.movie-list__table_one-time {
+/* .movie-list__table_one-time {
    padding-bottom: 1.35rem; 
    padding-right: 2.43rem;
-}
+} */
 .movie-list__table_one-text {
     text-align: left;
-    padding-left: 2.56rem;
     padding-top: 0.43rem;
 }
 .movie-list__table_one-plus {
-    width: 13%;
-    padding-top: 1rem;
+    padding: 1rem;
 }
 .movie-list__table_one-link {
     padding-left: 2.43rem;
@@ -392,7 +385,6 @@ body {
     padding: 1.18rem;
     overflow: hidden;
     color: #fff;
-    width: 100%;
     height: 100%;
     transform: translateY(100%);
 }
@@ -486,6 +478,7 @@ body {
     text-align: center;
     color: #ffffff;
 }
+/* форма */
 .popup {
     position: fixed;
     top: 0;
@@ -493,6 +486,7 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, .7);
+    z-index: 3;
 }
 .modal__form {
     max-width: 22.5rem;
@@ -565,4 +559,96 @@ body {
 }
 .error .popup-error-message {
     display: block;
+}
+.booking {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .7);
+    z-index: 2;
+}
+.booking-form {
+    width: 26rem;
+    height: 30rem;
+    border-radius: 15px;
+    background-color: #fff;
+    padding: 30px 20px;
+    margin: 150px auto;
+    position: relative;
+}
+.cinema-tickets {
+    text-align: center;
+    margin-top: 25px;
+}
+.square {
+    display: inline-block;
+    text-align: center;
+    padding-top: 3px;
+	width: 30px;
+	height: 30px;
+    background: #a3cc40;
+    border: 1px solid #0a0a0a;
+    margin: 2px;
+}
+.square:hover {
+    background-color:  #4b4d4f;
+}
+
+.place-taken {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+.place-taken p {
+    margin-top: 8px;
+}
+.bought {
+    background-color: #ffa500;
+}
+.reserve {
+    background-color: #a3cc40;
+}
+.clic {
+    background-color:  #4b4d4f;
+}
+.modal-form {
+    max-width: 22.5rem;
+    padding: 1.25rem; 
+}
+
+.modal-form div {
+    font-size: .95rem;
+    color: #6c6c6c;
+    padding: 0.3rem 0.3rem;
+    border: 1px solid #bebebe;
+    border-radius: 0.25rem;
+    width: 100%;
+    transition: 0.2s;
+}
+.modal-form span {
+    color: rgb(55, 55, 55);
+}
+.modal-form input {
+    margin: 1px;
+}
+.modal-input {
+    margin-left: 20px;
+}
+.modal-input input {
+    margin-top: 4px;
+}
+.button2 {
+    display: block;
+    margin: 0 auto;
+    background: #90d23d;
+    color: #ffffff;
+    padding: 0.3rem 1.2rem;
+    border-radius: 0.6rem;
+    font-size: 1.5rem;
+    transition: 0.2s;
+    border: 0.1rem solid #90d23d;
+    cursor: pointer;
+    margin-top: 20px;
 }
