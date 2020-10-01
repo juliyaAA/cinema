@@ -13,7 +13,7 @@ const mock = [
         behance: "https://www.behance.net",
         price: 200,
         room: 0,
-        tickets: [5, 6]
+        tickets: []
     },
     {
         name: "Собачья жизнь 2",
@@ -29,7 +29,7 @@ const mock = [
         behance: "https://www.behance.net",
         price: 300,
         room: 1,
-        tickets: [10, 8]
+        tickets: []
     },
     {
         name: "История игрушек 4",
@@ -45,7 +45,7 @@ const mock = [
         behance: "https://www.behance.net",
         price: 500,
         room: 2,
-        tickets: [1, 9, 4]
+        tickets: []
     },
     {
         name: "Люди в чёрном: Интернэшнл",
@@ -61,7 +61,7 @@ const mock = [
         behance: "https://www.behance.net",
         price: 700,
         room: 1,
-        tickets: [3, 8, 9, 5]
+        tickets: []
     }
 ];
 
@@ -247,14 +247,23 @@ const film = {
         let countTicket = document.getElementById('orderFilmCountTicket');
         let orderFilmTotalPrice = document.getElementById('orderFilmTotalPrice');
         cinemaTickets.innerHTML = '';
-        
+
         for(let i = 1; i < count + 1; i++) {
             let element = document.createElement('div');
+            console.log(element);
             element.classList.add('square');
-            element.oncontextmenu = function() {
+            // Правая кнопка мыши
+            element.oncontextmenu = function(event) {
+                event.preventDefault();
                 console.log(filmsHire, i);
                 alert(filmsHire[indexFilm].price);
             };
+            element.addEventListener("mouseover", function (event) {
+                event.target.classList.add('clic'); 
+            });
+            element.addEventListener("mouseout", function (event) {
+                event.target.classList.remove('clic'); 
+            });
             // Проверка на уже забронированный билет
             this.tickets.forEach(item => {
                 if(item === i) {
@@ -262,17 +271,17 @@ const film = {
                 }
             });
             element.innerHTML = i;
+            element.setAttribute('data-plase', i);
             cinemaTickets.append(element),
             element.onclick = event => {
                 if(event.target.classList.contains('bought')) {
-                    alert('место забронировано');
+                    // alert('место забронировано');
+                    event.target.classList.remove('bought');
+                    countTicket.innerHTML = parseInt(countTicket.innerHTML) - 1;
+                    orderFilmTotalPrice.innerHTML = this.price * parseInt(countTicket.innerHTML);
                 } else if (!event.target.classList.contains('reserve')) {
                     event.target.classList.add('clic', 'bought');
                     countTicket.innerHTML = parseInt(countTicket.innerHTML) + 1;
-                    orderFilmTotalPrice.innerHTML = this.price * parseInt(countTicket.innerHTML);
-                } else {
-                    event.target.classList.remove('reserve');
-                    countTicket.innerHTML = parseInt(countTicket.innerHTML) - 1;
                     orderFilmTotalPrice.innerHTML = this.price * parseInt(countTicket.innerHTML);
                 }
             };
@@ -378,19 +387,6 @@ closeOrderForm.onclick = function () {
   orderForm.style.display = 'none';
 };
 
-// Валидация ввода имени
-/** РАЗОБРАТЬ Event Handler */
-let sendOrder = document.getElementById('sendOrder');
-sendOrder.onclick = function () {
-  let orderClinetName = document.getElementById('orderClinetName');
-
-  if (orderClinetName.value) {
-    orderClinetName.style.border = '1px solid #bebebe';
-  } else {
-    orderClinetName.style.border = '2px solid red';
-  }
-};
-
 let mosaicDOM = document.getElementById("filmsNew"); // это flex контейнер, куда добавляются блоки
 for (let i = 0; i < filmsNew.length; i++) {
     let currentFilm = filmsNew[i],
@@ -400,3 +396,88 @@ for (let i = 0; i < filmsNew.length; i++) {
     div.innerHTML = filmBlockHTML; //записываем в DOM элемент HTML разметку
     mosaicDOM.appendChild(div); //добавляем в DOM элемент таблицы DOM элемент строки с фильмом
 }
+
+// Обработка формы
+function checkCorrectPhoneNumber (number) {
+    return true
+}
+const clearError = (element) => {
+    let i = 0;
+    while( i < element.getElementsByClassName('popup-error-message').length) {
+        element.getElementsByClassName('popup-error-message')[i].parentNode.classList.remove('error');
+        element.getElementsByClassName('popup-error-message')[i].innerHTML = '';
+        i++;
+    }
+}
+orderFormPlase.addEventListener('submit', event => {
+    const setError = ($el, error) => {
+        $el.parentNode.classList.add('error');
+        $el.parentNode.getElementsByClassName('popup-error-message')[0].innerHTML = error;
+    }
+    event.preventDefault();
+    clearError(orderFormPlase);
+    const fields = orderFormPlase.getElementsByTagName('input');
+    let error = false;
+    const data = {
+        name: '',
+        phone: '',
+        places: []
+    };
+    for (let i = 0; i < fields.length; i++) {
+        switch(fields[i].getAttribute('name')){
+            case 'name':
+                if(!checkInput(fields[i].value)){
+                    setError(fields[i], 'Заполните поле имя');
+                    error = true;
+                    break;
+                } 
+                data.name = fields[i].value; 
+                break;            
+            case 'phone':
+                if(!checkInput(fields[i].value)){
+                    setError(fields[i], 'Заполните поле телефон');
+                    error = true;
+                    break;
+                } else {
+                    if(!checkCorrectPhoneNumber(fields[i].value)){
+                        setError(fields[i], 'Введите корректный номер телефона');
+                        error = true;
+                        break;
+                    }
+                    data.phone = fields[i].value;    
+                }
+                break;
+            default:
+                console.error('Поле не опознано');
+        }
+    }
+    // Проверяем выбранные места
+    // На ошибку
+    if (orderFormPlase.getElementsByClassName('reserve').length < 1) {
+        error = true;
+        orderFormPlase.getElementsByClassName('tickets-error')[0].classList.add('error');
+        orderFormPlase.getElementsByClassName('tickets-error')[0].getElementsByTagName('p')[0].innerHTML = 'Выберете место';
+    } else {
+        // На то что места заняты
+        let places = [];
+        for (let i = 0; i < orderFormPlase.getElementsByClassName('reserve').length; i++) {
+            places.push(orderFormPlase.getElementsByClassName('reserve')[i].getAttribute('data-place'));
+        }
+        data.places = places;
+    }
+    // Прекратить отправку формы если есть ошибка
+    if(error) {
+        return
+    }
+
+    // Сформируем объект для отправки на сервер и отправим
+    sendFormButton.getAttribute('disabled', 'true');
+    sendFormButton.getElementsByClassName('overlay-loader')[0].style.display = 'inline-block';
+
+    setTimeout(() => {
+        sendFormButton.getAttribute('disabled');
+        sendFormButton.getElementsByClassName('overlay-loader')[0].style.display = 'none';
+        orderForm.style.display = 'none';
+        popupSuccess.classList.remove('hidden');
+    }, 3000);
+})

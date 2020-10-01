@@ -227,7 +227,7 @@
         </form>
     </div>
     <div id="booking-form" class="booking hidden">
-        <form action="order.php" class="booking-form">
+        <form action="order.php" class="booking-form" id="orderFormPlase">
             <div id="booking-close" class="close"><img class="popup-close_img" src="img/close.svg" alt="close" ></div>
             <div class="modal-form">
                 <div>
@@ -254,22 +254,44 @@
             </div>
             <div class="modal-input">
                 <div>
-                    <label for="price"></label>
-                    <input type="number" id="sendOrder" name="tentacles">
+                    <label>
+                        <input type="tel" name="phone"  placeholder="+7(999)-999-99-99">
+                    </label>
+                    <p class="popup-error-message"></p>
                 </div>
                 <div>
-                    <label for="phone"></label>
-                    <input type="tel" id="phone" name="phone" pattern="[+7(999)-999-99-99]" placeholder="+7(999)-999-99-99"> 
-                </div>
-                <div>
-                    <input type="text" name="name" placeholder="Введите имя">
+                    <label>
+                        <input type="text" name="name" placeholder="Введите имя">
+                    </label>
+                    <p class="popup-error-message"></p>
                 </div>
             </div> 
             <div id="cinema-tickets" class="cinema-tickets">
                 <div class="square"></div>
             </div>
+            <div class="tickets-error error">
+                <p class="popup-error-message"></p>
+            </div>
             <div>
-                <input type="submit" name="name-submit" value="заказать" class="button2">
+                <label for="sendOrder"></label>
+                <input type="submit" name="name-submit" value="заказать" class="button2" id="sendOrder">
+                <div class="windows8">
+                    <div class="wBall" id="wBall_1">
+                        <div class="wInnerBall"></div>
+                    </div>
+                    <div class="wBall" id="wBall_2">
+                        <div class="wInnerBall"></div>
+                    </div>
+                    <div class="wBall" id="wBall_3">
+                        <div class="wInnerBall"></div>
+                    </div>
+                    <div class="wBall" id="wBall_4">
+                        <div class="wInnerBall"></div>
+                    </div>
+                    <div class="wBall" id="wBall_5">
+                        <div class="wInnerBall"></div>
+                    </div>
+                </div>
             </div>
         </form>
     </div>

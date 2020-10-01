@@ -560,6 +560,9 @@ body {
 .error .popup-error-message {
     display: block;
 }
+.tickets-error {
+    text-align: center;
+}
 .booking {
     position: fixed;
     top: 0;
@@ -580,7 +583,7 @@ body {
 }
 .cinema-tickets {
     text-align: center;
-    margin-top: 25px;
+    margin-top: 10px;
 }
 .square {
     display: inline-block;
@@ -592,10 +595,6 @@ body {
     border: 1px solid #0a0a0a;
     margin: 2px;
 }
-.square:hover {
-    background-color:  #4b4d4f;
-}
-
 .place-taken {
     display: flex;
     justify-content: space-evenly;
@@ -615,7 +614,7 @@ body {
 }
 .modal-form {
     max-width: 22.5rem;
-    padding: 1.25rem; 
+    padding: 1rem; 
 }
 
 .modal-form div {
