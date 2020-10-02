@@ -253,17 +253,17 @@ const film = {
             console.log(element);
             element.classList.add('square');
             // Правая кнопка мыши
-            element.oncontextmenu = function(event) {
-                event.preventDefault();
-                console.log(filmsHire, i);
-                alert(filmsHire[indexFilm].price);
-            };
+            element.addEventListener("contextmenu", (event) => {
+                    event.preventDefault();
+                    console.log(filmsHire, i);
+                    alert(filmsHire[indexFilm].price);
+            });
             element.addEventListener("mouseover", function (event) {
                 event.target.classList.add('clic'); 
             });
             element.addEventListener("mouseout", function (event) {
                 event.target.classList.remove('clic'); 
-            });
+            }); 
             // Проверка на уже забронированный билет
             this.tickets.forEach(item => {
                 if(item === i) {
@@ -283,7 +283,11 @@ const film = {
                     event.target.classList.add('clic', 'bought');
                     countTicket.innerHTML = parseInt(countTicket.innerHTML) + 1;
                     orderFilmTotalPrice.innerHTML = this.price * parseInt(countTicket.innerHTML);
-                }
+                }//  else {
+                //     event.target.classList.remove('reserve');
+                //     countTicket.innerHTML = parseInt(countTicket.innerHTML) - 1;
+                //     orderFilmTotalPrice.innerHTML = this.price * parseInt(countTicket.innerHTML);
+                // }
             };
         }
     }
@@ -385,7 +389,14 @@ let closeOrderForm = document.getElementById('booking-close');
 
 closeOrderForm.onclick = function () {
   orderForm.style.display = 'none';
+  
 };
+// Закрытие по кнопке Esc
+window.addEventListener("keydown", function (event) {
+    if ( event.keyCode == 27 ) {
+        orderForm.style.display = 'none';
+    } 
+});
 
 let mosaicDOM = document.getElementById("filmsNew"); // это flex контейнер, куда добавляются блоки
 for (let i = 0; i < filmsNew.length; i++) {
