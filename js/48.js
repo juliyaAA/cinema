@@ -13,7 +13,7 @@ const mock = [
         behance: "https://www.behance.net",
         price: 200,
         room: 0,
-        tickets: []
+        tickets: [5, 6, 10]
     },
     {
         name: "Собачья жизнь 2",
@@ -29,7 +29,7 @@ const mock = [
         behance: "https://www.behance.net",
         price: 300,
         room: 1,
-        tickets: []
+        tickets: [1, 2, 3, 11]
     },
     {
         name: "История игрушек 4",
@@ -45,7 +45,7 @@ const mock = [
         behance: "https://www.behance.net",
         price: 500,
         room: 2,
-        tickets: []
+        tickets: [4, 7]
     },
     {
         name: "Люди в чёрном: Интернэшнл",
@@ -61,7 +61,7 @@ const mock = [
         behance: "https://www.behance.net",
         price: 700,
         room: 1,
-        tickets: []
+        tickets: [6, 9]
     }
 ];
 
@@ -267,27 +267,24 @@ const film = {
             // Проверка на уже забронированный билет
             this.tickets.forEach(item => {
                 if(item === i) {
-                    element.classList.add('bought');
+                    element.classList.add('busy');
                 }
             });
             element.innerHTML = i;
             element.setAttribute('data-plase', i);
             cinemaTickets.append(element),
             element.onclick = event => {
-                if(event.target.classList.contains('bought')) {
-                    // alert('место забронировано');
-                    event.target.classList.remove('bought');
-                    countTicket.innerHTML = parseInt(countTicket.innerHTML) - 1;
-                    orderFilmTotalPrice.innerHTML = this.price * parseInt(countTicket.innerHTML);
+                if(event.target.classList.contains('busy')) {
+                    alert('место забронировано');
                 } else if (!event.target.classList.contains('reserve')) {
-                    event.target.classList.add('clic', 'bought');
+                    event.target.classList.add('reserve');
                     countTicket.innerHTML = parseInt(countTicket.innerHTML) + 1;
                     orderFilmTotalPrice.innerHTML = this.price * parseInt(countTicket.innerHTML);
-                }//  else {
-                //     event.target.classList.remove('reserve');
-                //     countTicket.innerHTML = parseInt(countTicket.innerHTML) - 1;
-                //     orderFilmTotalPrice.innerHTML = this.price * parseInt(countTicket.innerHTML);
-                // }
+                }  else {
+                    event.target.classList.remove('reserve');
+                    countTicket.innerHTML = parseInt(countTicket.innerHTML) - 1;
+                    orderFilmTotalPrice.innerHTML = this.price * parseInt(countTicket.innerHTML);
+                }
             };
         }
     }

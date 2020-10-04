@@ -603,14 +603,14 @@ body {
 .place-taken p {
     margin-top: 8px;
 }
-.bought {
-    background-color: #ffa500;
-}
 .reserve {
-    background-color: #a3cc40;
+    background-color: #ffa500;
 }
 .clic {
     background-color:  #4b4d4f;
+}
+.busy {
+    background-color:  rgb(200, 32, 32);
 }
 .modal-form {
     max-width: 22.5rem;
