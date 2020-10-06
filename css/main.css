@@ -677,3 +677,32 @@ body {
     margin: 320px auto;
     position: relative;
 }
+.modal-content {
+    width: 12rem;
+    height: 6rem;
+    border-radius: 15px;
+    background-color: #fff;
+    padding: 30px 20px;
+    margin: 250px auto;
+    position: relative;
+}
+.modal-header {
+    font-size: .95rem;
+    color: rgb(55, 55, 55);
+    margin-top: 0.3rem; 
+}
+.modal-body {
+    margin-top: 0.6rem;
+}
+.search_result {
+    margin-top: 0.3rem;
+}
+.ajax-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, .8);
+    z-index: 1000000;
+}

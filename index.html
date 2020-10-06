@@ -36,7 +36,7 @@
                 <div class="block__col3">
                     <p class="block__city">
                         <span>Ваш город: </span>
-                        <a href="#">не выбрано</a>
+                        <a href="#" id="city_name" data-fancybox data-src="#choose_city">не выбрано</a>
                     </p>
                 </div>
             </header>
@@ -199,6 +199,7 @@
             </p>
         </div>
     </footer>
+    <!-- Форма получить подарок  -->
     <div id='popup' class="popup hidden">
         <form class="order-form">
             <div id="popup-close" class="close"><img class="popup-close_img" src="img/close.svg" alt="close" ></div>
@@ -236,6 +237,7 @@
             </div>
         </form>
     </div>
+    <!-- заказ билета -->
     <div id="booking-form" class="booking hidden">
         <form action="order.php" class="booking-form" id="orderFormPlase">
             <div id="booking-close" class="close"><img class="popup-close_img" src="img/close.svg" alt="close"></div>
@@ -286,6 +288,7 @@
             </div>
         </form>
     </div>
+    <!-- спасибо -->
     <div id="purchase" class="booking hidden">
         <form action="order.php" class="purchase-form">
             <div id="purchase-close" class="close"><img class="popup-close_img" src="img/close.svg" alt="close"></div>
@@ -294,12 +297,30 @@
             </div>
         </form>
     </div>
+    <!-- Модальное окно выбора города -->
+    <div id="choose_city" class="booking hidden">
+        <form action="order.php" class="modal-content">
+            <div id="purchase-close" class="close"><img class="popup-close_img" src="img/close.svg" alt="close"></div>
+            <div class="modal-header">
+                <p class="modal-title">Ваш город</p>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                    <input class="st-input" type="text" name="citi">
+                </div>
+                <div class="search_result"></div>
+            </div>
+            <div class="modal-footer"></div>
+        </form>
+    </div>
+    <div class="ajax-loader"></div>
 
     <script src="js/jquery.js"></script>
     <script src="js/plugins/owlcarousel/js/owl.carousel.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel" src="js/script.js"></script>
-    <script type="text/babel" src="js/48.js"></script>   
+    <script type="text/babel" src="js/48.js"></script> 
+    <script type="text/babel" src="js/ajax.js"></script>  
 </body>
 
 </html>
