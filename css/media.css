@@ -1,4 +1,10 @@
 @media screen and (max-width: 1000px) {
+    .block__col3 {
+        display: none;
+    }
+    .block__col2 {
+        width: 70%;
+    }
     .block2__plus img {
         display: block;
         margin: 0 auto;
@@ -8,6 +14,9 @@
     }
 }
 @media screen and (max-width:905px) {
+    .block__col2 {
+        float: right;
+    }
     .block2__card {
         width: 391px;
     }
@@ -62,6 +71,9 @@
     }
 }
 @media screen and (max-width:780px) {
+    .block1__nav li {
+        padding: 0 0.3rem;
+    }
     .gift__img {
         top: 31px;
     }
@@ -73,6 +85,9 @@
     }
 }
 @media screen and (max-width:700px) {
+    .block__col2 {
+        width: 65%;
+    }
     .block1__nav {
         line-height: 0;
     }
@@ -119,7 +134,11 @@
         width: 270px;
     }
 }
- 
+@media screen and (max-width: 650px) {
+    .block1__nav li {
+        padding: 0.2rem;
+    }
+}
 @media screen and (max-width:600px) {
     .block1 {
         min-height: 41.1rem;

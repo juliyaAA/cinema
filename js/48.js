@@ -379,14 +379,21 @@ for (let i = 0; i < filmsHire.length; i++) {
     tableDOM.appendChild(tr); //добавляем в DOM элемент таблицы DOM элемент строки с фильмом
 }
 
-// Закрытие модального окна
-/*** РАЗОБРАТЬ Event Handler */
+
 let orderForm = document.getElementById('booking-form');
 let closeOrderForm = document.getElementById('booking-close');
+let Purchase = document.getElementById('purchase');
+let closePurchase = document.getElementById('purchase-close');
 
+// Закрытие модального окна
+/*** РАЗОБРАТЬ Event Handler */
 closeOrderForm.onclick = function () {
-  orderForm.style.display = 'none';
-  
+    orderForm.style.display = 'none';
+    
+};
+closePurchase.onclick = function () {
+    Purchase.style.display = 'none';
+    
 };
 // Закрытие по кнопке Esc
 window.addEventListener("keydown", function (event) {
@@ -417,7 +424,9 @@ const clearError = (element) => {
         i++;
     }
 }
+
 orderFormPlase.addEventListener('submit', event => {
+    console.log (orderFormPlase);
     const setError = ($el, error) => {
         $el.parentNode.classList.add('error');
         $el.parentNode.getElementsByClassName('popup-error-message')[0].innerHTML = error;
@@ -448,6 +457,7 @@ orderFormPlase.addEventListener('submit', event => {
                     break;
                 } else {
                     if(!checkCorrectPhoneNumber(fields[i].value)){
+                        // $('input[name=phone]').mask("+7 (999) 999-99-99");
                         setError(fields[i], 'Введите корректный номер телефона');
                         error = true;
                         break;
@@ -479,13 +489,12 @@ orderFormPlase.addEventListener('submit', event => {
     }
 
     // Сформируем объект для отправки на сервер и отправим
-    sendFormButton.getAttribute('disabled', 'true');
-    sendFormButton.getElementsByClassName('overlay-loader')[0].style.display = 'inline-block';
+    const sendFormButton = document.getElementById('sendOrder');
+    sendFormButton.setAttribute('disabled', 'true');
 
     setTimeout(() => {
-        sendFormButton.getAttribute('disabled');
-        sendFormButton.getElementsByClassName('overlay-loader')[0].style.display = 'none';
         orderForm.style.display = 'none';
-        popupSuccess.classList.remove('hidden');
+        orderForm.classList.remove('hidden');
+        Purchase.classList.remove('hidden');
     }, 3000);
 })

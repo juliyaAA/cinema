@@ -26,13 +26,18 @@
                     </div>
                     <nav class="block1__nav block1__nav_close">
                         <ul>
-                            <li><a href="#ticket">Event Details</a></li>
-                            <li><a href="#work">Speakers</a></li>
-                            <li><a href="#film">Sponsors</a></li>
-                            <li><a href="#contact">Past Events</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#ticket">ЗАКАЗАТЬ БИЛЕТ</a></li>
+                            <li><a href="#work">ПРЕИМУЩЕСТВА</a></li>
+                            <li><a href="#film">ФИЛЬМЫ</a></li>
+                            <li><a href="#contact">КОНТАКТЫ</a></li>
                         </ul>
                     </nav>
+                </div>
+                <div class="block__col3">
+                    <p class="block__city">
+                        <span>Ваш город: </span>
+                        <a href="#">не выбрано</a>
+                    </p>
                 </div>
             </header>
 
@@ -158,7 +163,7 @@
                 laudantium neque nihil omnis perferendis sed sequi tempore! Ad ea esse ex inventore repudiandae,
                 suscipit!
             </p>
-            <div class="block5__table owl-carousel" id="filmsNew"></div>
+            <div class="block5__table" id="filmsNew"></div>
         </div>
     </section>
 
@@ -199,13 +204,13 @@
             <div id="popup-close" class="close"><img class="popup-close_img" src="img/close.svg" alt="close" ></div>
             <div class="modal__form">
                 <div class="input-wrap">
-                    <label for="">Имя
-                        <input type="text" name="as" id="name" required placeholder="Имя" class="input-text">
-                    </label>
+                    <label for="name-text"></label>
+                    <input type="text" name="as" id="name-text" required placeholder="Введите имя" class="input-text">
                     <div class="popup-error-message"></div>
                 </div>
                 <div class="input-wrap">
                     <select id="select" type="text" required class="input-text">
+                        <option>Выберите место</option>
                         <option>Выбор 1</option>
                         <option>Выбор 2</option>
                         <option>Выбор 3</option>
@@ -217,15 +222,16 @@
                         <option>Выбор 9</option>
                         <option>Выбор 10</option>
                     </select>
-                </div>
-                <div class="input-wrap">
-                    <label><input type="checkbox" name="agree" id="agree">Я согласен на обработку персональных данных</label>
                     <div class="popup-error-message"></div>
                 </div>
                 <div class="input-wrap">
-                    <label>Заказать
-                        <input type="submit" value="заказать" class="button1" id="submit">
-                    </label>
+                    <label for="agree"></label>
+                    <input type="checkbox" name="agree" id="agree">Я согласен на обработку персональных данных
+                    <div class="popup-error-message"></div>
+                </div>
+                <div class="input-wrap">
+                    <label for="submit"></label>
+                    <input type="submit" value="заказать" class="button1" id="submit">
                 </div>
             </div>
         </form>
@@ -258,15 +264,13 @@
             </div>
             <div class="modal-input">
                 <div>
-                    <label>телефон
-                        <input type="tel" name="phone" id="phone" placeholder="+7(999)-999-99-99">
-                    </label>
+                    <label for="phone">телефон</label>
+                    <input type="tel" name="phone" id="phone" placeholder="+7(999)-999-99-99">
                     <p class="popup-error-message"></p>
                 </div>
                 <div>
-                    <label>Имя
-                        <input type="text" name="name" id="text-name" placeholder="Введите имя">
-                    </label>
+                    <label for="text-name">Имя</label>
+                    <input type="text" name="name" id="text-name" placeholder="Введите имя">
                     <p class="popup-error-message"></p>
                 </div>
             </div> 
@@ -277,27 +281,16 @@
                 <p class="popup-error-message"></p>
             </div>
             <div>
-                <label>Заказать
-                    <input type="submit" name="name-submit" value="заказать" class="button2" id="sendOrder">
-                </label>
-                
-                <div class="windows8">
-                    <div class="wBall" id="wBall_1">
-                        <div class="wInnerBall"></div>
-                    </div>
-                    <div class="wBall" id="wBall_2">
-                        <div class="wInnerBall"></div>
-                    </div>
-                    <div class="wBall" id="wBall_3">
-                        <div class="wInnerBall"></div>
-                    </div>
-                    <div class="wBall" id="wBall_4">
-                        <div class="wInnerBall"></div>
-                    </div>
-                    <div class="wBall" id="wBall_5">
-                        <div class="wInnerBall"></div>
-                    </div>
-                </div>
+                <label for="sendOrder"></label>
+                <input type="submit" name="name-submit" value="заказать" class="button2" id="sendOrder">
+            </div>
+        </form>
+    </div>
+    <div id="purchase" class="booking hidden">
+        <form action="order.php" class="purchase-form">
+            <div id="purchase-close" class="close"><img class="popup-close_img" src="img/close.svg" alt="close"></div>
+            <div>
+                <h3>Спасибо за покупку!</h3>
             </div>
         </form>
     </div>
