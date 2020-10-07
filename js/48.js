@@ -433,7 +433,8 @@ orderFormPlase.addEventListener('submit', event => {
     }
     event.preventDefault();
     clearError(orderFormPlase);
-    const fields = orderFormPlase.getElementsByTagName('input');
+    
+    const fields = document.querySelectorAll('#text-name, #phone');
     let error = false;
     const data = {
         name: '',
@@ -457,7 +458,6 @@ orderFormPlase.addEventListener('submit', event => {
                     break;
                 } else {
                     if(!checkCorrectPhoneNumber(fields[i].value)){
-                        // $('input[name=phone]').mask("+7 (999) 999-99-99");
                         setError(fields[i], 'Введите корректный номер телефона');
                         error = true;
                         break;
