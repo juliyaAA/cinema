@@ -17,12 +17,6 @@ function getXmlRequest (url, callback) {
     xhr.send();
 }
 
-// function sleep() {
-//     for (i = 0; i < 100000000; i++) {
-
-//     }
-// }
-
 jQuery(document).ready(($) => {
     $('#city_name').on('click', function(e) {
         e.preventDefault();
@@ -79,23 +73,3 @@ jQuery(document).ready(($) => {
         }
     });
 });
-// jQuery(document).ready(($) => {
-//     $('.ajax-loader').show();
-//     $.ajax ({
-//         url: GEO_API,
-//         type: 'GET',
-//         dataType: 'json',
-//         success: function(result){
-//             console.log(result);
-//             city = result.city.name_ru;
-//             console.log(city);
-//             $('#city_name').html(city);
-//             $('.ajax-loader').hide();
-//         },
-//         error: function(result) {
-//             setTimeout(() => {
-//                 $('.ajax-loader').hide();
-//             }, 3000);
-//         }
-//     });
-// });
