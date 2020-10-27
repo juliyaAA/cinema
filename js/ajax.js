@@ -1,45 +1,43 @@
-const GEO_API = 'http://api.sypexgeo.net',
-      CITIES_API = 'https://glavpunkt.ru/api/get_rf_cities';
+const GEO_API = 'http://api.sypexgeo.net/';
+const CITIES_API = 'https://glavpunkt.ru/api/get_rf_cities';
 
-let city, cities;  
+let city;
+let cities;
 
-function getXmlRequest (url, callback) {
+function getXmlReguest(url, callback) {
     let xhr = new XMLHttpRequest();
     xhr.open('GET', url);
-    xhr.onreadystatechange = function() {
-        if(xhr.status == 200 && xhr.readyState == 4) {
+    xhr.onreadystatechange = function () {
+        if (xhr.status == 200 && xhr.readyState == 4) {
             callback.call(xhr.responseText);
         }
-        if(xhr.status !== 200) {
+        if (xhr.status != 200) {
             console.log('error');
         }
     };
     xhr.send();
 }
 
-jQuery(document).ready(($) => {
+jQuery(($) => {
     $('#city_name').on('click', function(e) {
         e.preventDefault();
-        $.fancybox.open({
-            src: 'choose_city',
-            type: 'inline',
-        });
+        chosse_city.style.display = 'inline';
         console.log(cities);
-        if(!cities) {
-            getXmlRequest(CITIES_API, function(){
+        if (!cities) {
+            getXmlReguest(CITIES_API, function () {
                 cities = $.parseJSON(this);
-                console.log(cities);
             });
         }
     });
     $('[name = city_choose]').on('keyup', function() {
             let search = $(this).val(),
-            result = '<ul>',
-            counter = 0;
-            for(let i = 0; i < cities.length; i++) {
-                if(cities[i].name.toLowerCase().indexOf(search.toLowerCase()) >= 0){
-                    result += '<li>' + cities[i].name + '</li>'; 
-                }
+                result = '<ul>',
+                counter = 0;
+            for (let i = 0; i < cities.length; i++) {
+                    if (cities[i].name.toLowerCase().indexOf(search.toLowerCase()) >= 0 && counter < 5) {
+                        result += '<li>' + cities[i].name + '</li>';
+                        counter++;
+                    }
             }
             result += '</ul>';
             if(!counter) {
@@ -48,19 +46,15 @@ jQuery(document).ready(($) => {
             $('#search_result').html(result);
             $('body').on('click', '#search_result li', function (){
                 $('#city_name').html($(this).html());
-                $fancybox.close();
+                chosse_city.style.display = 'none';
             });
         });
-});
-jQuery(document).ready(($) => {
-    $('.ajax-loader').show();
-    $.ajax ({
-        url: GEO_API,
-        type: 'GET',
-        dataType: 'json',
-        success: function(result){
-            setTimeout(() => {
-                $('.ajax-loader').hide();
+        $.ajax({
+             url: GEO_API,
+             type: 'GET',
+             success: function(result){
+                setTimeout(() => {
+                    $('.ajax-loader').hide();
             }, 3000);
             console.log(result);
             city = result.city.name_ru;
@@ -72,4 +66,9 @@ jQuery(document).ready(($) => {
             $('.ajax-loader').hide();
         }
     });
+    $('.popup-close_img').on('click', function(e) {
+        e.preventDefault();
+        $(".booking").hide();
+    });
 });
+

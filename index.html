@@ -36,7 +36,7 @@
                 <div class="block__col3">
                     <p class="block__city">
                         <span>Ваш город: </span>
-                        <a href="#" id="city_name" data-fancybox data-src="#choose_city">не выбрано</a>
+                        <a href="#" id="city_name">не выбрано</a>
                     </p>
                 </div>
             </header>
@@ -210,8 +210,9 @@
                     <div class="popup-error-message"></div>
                 </div>
                 <div class="input-wrap">
+                    <label for="select">Выберите место</label>
                     <select id="select" type="text" required class="input-text">
-                        <option>Выберите место</option>
+                        <option>Не выбрано</option>
                         <option>Выбор 1</option>
                         <option>Выбор 2</option>
                         <option>Выбор 3</option>
@@ -284,7 +285,7 @@
             </div>
             <div>
                 <label for="sendOrder"></label>
-                <input type="submit" name="name-submit" value="заказать" class="button2" id="sendOrder">
+                <input type="submit" name='button' value="заказать" class="button2" id="sendOrder">
             </div>
         </form>
     </div>
@@ -298,25 +299,28 @@
         </form>
     </div>
     <!-- Модальное окно выбора города -->
-    <div id="choose_city" class="booking hidden">
-        <form action="order.php" class="modal-content">
+    <div id="chosse_city" class="booking" style="display: none;">
+        <div class="modal-content">
             <div id="purchase-close" class="close"><img class="popup-close_img" src="img/close.svg" alt="close"></div>
             <div class="modal-header">
                 <p class="modal-title">Ваш город</p>
             </div>
             <div class="modal-body">
                 <div class="input-group">
-                    <input class="st-input" type="text" name="citi">
+                    <input class="st-input" type="text" name="city_choose">
                 </div>
-                <div class="search_result"></div>
+                <div>
+                    <div id="search_result"></div>
+                </div>
+                
             </div>
-            <div class="modal-footer"></div>
-        </form>
+        </div>
     </div>
     <div class="ajax-loader"></div>
 
     <script src="js/jquery.js"></script>
     <script src="js/plugins/owlcarousel/js/owl.carousel.min.js"></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel" src="js/script.js"></script>
     <script type="text/babel" src="js/48.js"></script> 

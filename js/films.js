@@ -8,7 +8,10 @@ const films = [
   1045172,
   1005878,
   535341,
-  1236063
+  1236063,
+  522876,
+  959705,
+  435
 ];
 
 
@@ -43,7 +46,7 @@ const parseFilm = function (data) {
     link: data.webUrl
   };
 };
- const film = {
+const film = {
   getName: function() {
     return this.nameRu;
   },
@@ -99,42 +102,7 @@ const parseFilm = function (data) {
             <td class="movie-list__table_one-plus">${this.getGenre()}</td>
           </tr>`;
   }
-  // renderFilmBlock: function() {
-  //   return `<div class="block5__table-film">
-  //             <div class="block5__film">
-  //               <div class="block5__poster"><img src="${this.getImg()}"></div>
-  //               <div class="block5__cosial">
-  //                 <h3 class="block5__cosial-name">${this.name}</h3>
-  //                 <div class="block5__cosial-band"></div>
-  //                   <p class="block5__cosial-definition">${this.description}</p>
-  //                 <div class="block5__cosial-pin">
-  //                   <a class="block5__cosial-pin_icons" href="https://www.facebook.com" target="_blank"><img class="block5__cosial-pin_img"
-  //                       src="img/facebook.svg" alt="Facebook"></a>
-  //                   <a class="block5__cosial-pin_icons" href="https://twitter.com" target="_blank"><img class="block5__cosial-pin_img"
-  //                       src="img/twitter.svg" alt="Twitter"></a>
-  //                   <a class="block5__cosial-pin_icons" href="https://www.behance.net" target="_blank"><img class="block5__cosial-pin_img"
-  //                       src="img/behance-logo.svg" alt=""></a>
-  //                   <a class="block5__cosial-pin_icons" href="https://dribbble.com" target="_blank"><img class="block5__cosial-pin_img"
-  //                       src="img/dribbble.svg" alt=""></a>
-  //                 </div>
-  //               </div>
-  //             </div>
-  //           </div>`;
-  // }
 };
-
-// const generateTableItem = function(name, genre){
-  
-// };
-
-// const time = `${time1}${time1}:${time3}${time4}`;{
-//   return `<tr class="movie-list__table_one dark">
-//             <td id="film_start_1" class="movie-list__table_one-time">${time}</td>
-//             <td id="film_name_1" class="movie-list__table_one-text">${name}</td>
-//             <td class="movie-list__table_one-plus">${genre}</td>
-//           </tr>`;
-// };
-
 
 const generateFilmItem = function ({name, country, genre, year, description, img, link}){
   return `<div class="block5__table-film">
@@ -163,11 +131,52 @@ const generateFilmItem = function ({name, country, genre, year, description, img
 let element, prepareFilm;
 films.forEach(function(item){
   let film = getFilmById(item);
+  console.log({film});
+  window.foo= film;
   film.then(result => {
+    console.log({result,film, renderFilmRow});
         prepareFilm = parseFilm(result);
         element = generateFilmItem({...prepareFilm});
         filmsElement.insertAdjacentHTML('beforeEnd', element);
-        tableElement = generateTableItem({...prepareFilm});
+        tableElement = renderFilmRow({...prepareFilm});
         tableFilmsElement.insertAdjacentHTML('beforeEnd', tableElement);
   });
 });
+mosaicDOM.innerHTML = fullHTML;
+
+
+// const generateTableItem = function(name, genre){
+  
+// };
+
+// const time = `${time1}${time1}:${time3}${time4}`;{
+//   return `<tr class="movie-list__table_one dark">
+//             <td id="film_start_1" class="movie-list__table_one-time">${time}</td>
+//             <td id="film_name_1" class="movie-list__table_one-text">${name}</td>
+//             <td class="movie-list__table_one-plus">${genre}</td>
+//           </tr>`;
+// };
+
+
+  // renderFilmBlock: function() {
+  //   return `<div class="block5__table-film">
+  //             <div class="block5__film">
+  //               <div class="block5__poster"><img src="${this.getImg()}"></div>
+  //               <div class="block5__cosial">
+  //                 <h3 class="block5__cosial-name">${this.name}</h3>
+  //                 <div class="block5__cosial-band"></div>
+  //                   <p class="block5__cosial-definition">${this.description}</p>
+  //                 <div class="block5__cosial-pin">
+  //                   <a class="block5__cosial-pin_icons" href="https://www.facebook.com" target="_blank"><img class="block5__cosial-pin_img"
+  //                       src="img/facebook.svg" alt="Facebook"></a>
+  //                   <a class="block5__cosial-pin_icons" href="https://twitter.com" target="_blank"><img class="block5__cosial-pin_img"
+  //                       src="img/twitter.svg" alt="Twitter"></a>
+  //                   <a class="block5__cosial-pin_icons" href="https://www.behance.net" target="_blank"><img class="block5__cosial-pin_img"
+  //                       src="img/behance-logo.svg" alt=""></a>
+  //                   <a class="block5__cosial-pin_icons" href="https://dribbble.com" target="_blank"><img class="block5__cosial-pin_img"
+  //                       src="img/dribbble.svg" alt=""></a>
+  //                 </div>
+  //               </div>
+  //             </div>
+  //           </div>`;
+  // }

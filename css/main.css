@@ -196,7 +196,7 @@ body {
     flex-wrap: wrap;
     padding: 0 0.93rem;
 }
-.block2__img:hover {
+.block2__plus img:hover {
     transform: scale(1.07);
     transition: 0.3s;
 }
@@ -679,7 +679,7 @@ body {
 }
 .modal-content {
     width: 12rem;
-    height: 6rem;
+    height: 10rem;
     border-radius: 15px;
     background-color: #fff;
     padding: 30px 20px;
