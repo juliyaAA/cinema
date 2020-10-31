@@ -59,13 +59,13 @@ sendForm.onclick = function (event) {
         agreeParent.getElementsByClassName('popup-error-message')[0].innerHTML = 'Согласитесь на передачу данных';
     }
 
-    let select = document.getElementById('select');
+    let select = document.getElementById('mail');
     let selectParent = select.parentNode;
     selectParent.classList.remove('error');
     selectParent.getElementsByClassName('popup-error-message')[0].innerHTML = '';
     if (select.value == 0) {
         selectParent.classList.add('error');
-        selectParent.getElementsByClassName('popup-error-message')[0].innerHTML = 'Выберите место';
+        selectParent.getElementsByClassName('popup-error-message')[0].innerHTML = 'Введите ваш mail';
     }
 };
 

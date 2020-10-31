@@ -70,5 +70,10 @@ jQuery(($) => {
         e.preventDefault();
         $(".booking").hide();
     });
+    $(document).ready(function(){
+        $(".menu-burger").click(function(){
+            $("nav").toggleClass("block1__nav_close");
+        });
+    });
 });
 

@@ -558,7 +558,7 @@ body {
 }
 .popup-error-message {
     color: #cc0033;
-    font-size: .9vw;
+    font-size: 16px;;
     line-height: 20px;
 }
 .popup-error-message {
@@ -603,7 +603,7 @@ body {
     padding-top: 3px;
 	width: 30px;
 	height: 30px;
-    background: rgb(52, 75, 138);
+    background: rgb(188, 18, 204);
     border: 1px solid #0a0a0a;
     margin: 2px;
 }
@@ -661,7 +661,7 @@ body {
     transition: 0.2s;
     border: 0.1rem solid #90d23d;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .purchase-form h3 {
     margin-top: 2rem;

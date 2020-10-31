@@ -474,7 +474,7 @@ orderFormPlase.addEventListener('submit', event => {
     if (orderFormPlase.getElementsByClassName('reserve').length < 1) {
         error = true;
         orderFormPlase.getElementsByClassName('tickets-error')[0].classList.add('error');
-        orderFormPlase.getElementsByClassName('tickets-error')[0].getElementsByTagName('p')[0].innerHTML = 'Выберете место';
+        orderFormPlase.getElementsByClassName('tickets-error')[0].getElementsByTagName('p')[0].innerHTML = 'Выберите место';
     } else {
         // На то что места заняты
         let places = [];
