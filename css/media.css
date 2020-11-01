@@ -417,7 +417,7 @@
     }
     .footer__subdescr {
         margin-top: 1rem;
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 }
 @media screen and (max-width:420px) {
@@ -436,6 +436,9 @@
 @media screen and (max-width:370px) {
     .paragraph {
         font-size: 0.85rem;
+    }
+    .footer {
+        min-height: 8.5rem;
     }
     .booking-form {
         width: 16.5rem;
@@ -488,6 +491,6 @@
         justify-self: center;
     }
     .footer__cosial {
-        padding-top: 2rem;
+        padding-top: 1rem;
     }
 } 
