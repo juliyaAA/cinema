@@ -173,7 +173,7 @@
         width: 0px;
     }
     .block1__nav_close {
-        transform: translateY(-140%);
+        transform: translateX(-100%);
     }
     .block__h1 {
         font-size: 3.3rem;
